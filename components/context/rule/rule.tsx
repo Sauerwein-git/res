@@ -19,7 +19,7 @@ export default function Rule() {
             наши проценты
           </div>
           <Image
-            src="/img/iphone.png"
+            src="/img/iphone.webp"
             className={styles.iphone}
             alt="iphone"
             width={459}

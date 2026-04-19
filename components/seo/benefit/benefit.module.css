@@ -24,20 +24,20 @@
 
 .NEW {
   margin-right: 23px;
-  background: rgba(253, 76, 56, 1);
-  border: none;
-  border-radius: 8px;
   width: 75px;
   height: 34px;
   box-sizing: border-box;
-  font-family: "BebasNeue";
-  font-weight: 400;
-  font-size: 26px;
-  display: flex;
-  justify-content: center;
-  padding-top: 1px;
-  letter-spacing: 0.56px;
-  color: rgba(255, 255, 255, 1);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.newBadgeGraphic {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
 }
 
 .tag {
@@ -167,6 +167,15 @@
   border-radius: 12px;
   margin-top: 60px;
   gap: 5px;
+  overflow: hidden;
+}
+
+.desktopButtonGraphic {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+  transition: filter 0.2s ease;
 }
 
 .button:hover {
@@ -319,6 +328,10 @@
     gap: 5px;
   }
 
+  .desktopButtonGraphic {
+    display: none;
+  }
+
   .arrow {
     position: relative;
     top: -3px;
@@ -375,5 +388,32 @@
     letter-spacing: -0.48px;
     color: rgba(64, 72, 80, 1);
     margin-top: 20px;
+  }
+}
+
+@media (min-width: 951px) {
+  .button {
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    color: transparent;
+    gap: 0;
+    background: transparent;
+  }
+
+  .button > :not(.desktopButtonGraphic) {
+    display: none;
+  }
+
+  .button > .desktopButtonGraphic {
+    display: block;
+  }
+
+  .button:hover {
+    background: transparent;
+  }
+
+  .button:hover .desktopButtonGraphic {
+    filter: brightness(1.05);
   }
 }

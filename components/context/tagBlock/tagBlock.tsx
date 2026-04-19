@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./tagBlock.module.css";
 import ModalForm from "../../ModalForm/ModalForm";
-import AuditButton from "../../helpers/AuditButton";
 
 export default function TagBlock() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,7 +52,21 @@ export default function TagBlock() {
                 Эффективные кампании на основе аналитики рынка и вашей
                 unit-экономики для роста продаж и прибыли
               </div>
-              <AuditButton onClick={openModal} />
+              <button
+                type="button"
+                className={styles.anchorBut}
+                onClick={openModal}
+                aria-label="Начать с бесплатного аудита"
+              >
+                <img
+                  src="/img/contfb.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width={720}
+                  height={90}
+                  className={styles.desktopAuditGraphic}
+                />
+              </button>
             </div>
           </div>
         </div>

@@ -3,28 +3,28 @@
 import Image from "next/image";
 import styles from "./footer.module.css";
 import Link from "next/link";
-import { useMemo, useState, type FormEvent } from "react";
+import {
+  useCallback,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+} from "react";
 import { usePathname, useRouter } from "next/navigation";
 import ModalForm from "../ModalForm/ModalForm";
 
 function normalizePhoneDigits(raw: string): string {
-  // оставляем только цифры
   let digits = raw.replace(/\D/g, "");
-
-  // если человек начинает с 9 — считаем что это РФ номер без кода
   if (digits.startsWith("9")) digits = `7${digits}`;
-
-  // ограничиваем 11 цифрами
   if (digits.length > 11) digits = digits.slice(0, 11);
-
-  // если первая цифра не 7/8 — оставим как есть (пользователь может стирать/править)
   return digits;
 }
 
 function formatPhoneForDisplay(digits: string): string {
   if (!digits) return "";
 
-  // 8 XXX XXX XX XX
   if (digits.startsWith("8")) {
     const p0 = digits.slice(0, 1);
     const p1 = digits.slice(1, 4);
@@ -34,7 +34,6 @@ function formatPhoneForDisplay(digits: string): string {
     return [p0, p1, p2, p3, p4].filter(Boolean).join("-");
   }
 
-  // +7(XXX)-XXX-XX-XX
   if (digits.startsWith("7")) {
     const p1 = digits.slice(1, 4);
     const p2 = digits.slice(4, 7);
@@ -49,12 +48,10 @@ function formatPhoneForDisplay(digits: string): string {
     return res;
   }
 
-  // fallback — просто цифры
   return digits;
 }
 
 function isValidRuPhone(digits: string): boolean {
-  // принимаем только 11 цифр, начинается с 7 или 8
   return (
     digits.length === 11 && (digits.startsWith("7") || digits.startsWith("8"))
   );
@@ -70,8 +67,8 @@ export default function Footer() {
   const [isLoading, setIsLoading] = useState(false);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = useCallback(() => setIsModalOpen(true), []);
+  const closeModal = useCallback(() => setIsModalOpen(false), []);
 
   const isThanksPage = pathname === "/thanks";
 
@@ -79,6 +76,57 @@ export default function Footer() {
     () => formatPhoneForDisplay(phoneDigits),
     [phoneDigits],
   );
+
+  const bigWrapRef = useRef<HTMLDivElement | null>(null);
+  const bigTextRef = useRef<HTMLDivElement | null>(null);
+  const [bigScaleX, setBigScaleX] = useState(1);
+
+  const recalcBig = useCallback(() => {
+    const wrap = bigWrapRef.current;
+    const text = bigTextRef.current;
+    if (!wrap || !text) return;
+
+    const maxW = wrap.clientWidth;
+    const textW = text.scrollWidth;
+
+    if (!maxW || !textW) return;
+
+    const s = Math.min(1, maxW / textW);
+    const safe = Math.max(0.01, Math.min(1, s * 0.999));
+    const nextScale = Number(safe.toFixed(4));
+    setBigScaleX((prev) => (prev === nextScale ? prev : nextScale));
+  }, []);
+
+  useLayoutEffect(() => {
+    recalcBig();
+
+    let ro: ResizeObserver | null = null;
+    if (typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver(() => recalcBig());
+      if (bigWrapRef.current) ro.observe(bigWrapRef.current);
+      if (bigTextRef.current) ro.observe(bigTextRef.current);
+    }
+
+    window.addEventListener("resize", recalcBig);
+    return () => {
+      window.removeEventListener("resize", recalcBig);
+      if (ro) ro.disconnect();
+    };
+  }, [recalcBig]);
+
+  const handleNameChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => setName(e.target.value),
+    [],
+  );
+
+  const handlePhoneChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) =>
+      setPhoneDigits(normalizePhoneDigits(e.target.value)),
+    [],
+  );
+
+  const toggleAgreement = useCallback(() => setIsAgreed((v) => !v), []);
+  const isSubmitDisabled = !isAgreed || isLoading;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -108,7 +156,6 @@ export default function Footer() {
         body: JSON.stringify({ name: n, phone: phoneDigits }),
       });
 
-      // если PHP иногда возвращает не JSON — не падаем
       let data: unknown = null;
       try {
         data = await response.json();
@@ -171,7 +218,7 @@ export default function Footer() {
                     type="text"
                     placeholder="Ваше имя"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={handleNameChange}
                     className={styles.footerInput}
                     autoComplete="name"
                     required
@@ -181,9 +228,7 @@ export default function Footer() {
                     type="tel"
                     placeholder="Номер телефона"
                     value={phoneDisplay}
-                    onChange={(e) =>
-                      setPhoneDigits(normalizePhoneDigits(e.target.value))
-                    }
+                    onChange={handlePhoneChange}
                     inputMode="tel"
                     autoComplete="tel"
                     className={styles.footerInput}
@@ -193,10 +238,12 @@ export default function Footer() {
                   <div className={styles.footerAgreement}>
                     <button
                       type="button"
-                      className={`${styles.footerCheckbox} ${isAgreed ? styles.checked : ""}`}
+                      className={`${styles.footerCheckbox} ${
+                        isAgreed ? styles.checked : ""
+                      }`}
                       aria-pressed={isAgreed}
                       aria-label="Согласие с политикой конфиденциальности"
-                      onClick={() => setIsAgreed((v) => !v)}
+                      onClick={toggleAgreement}
                     />
                     <div className={styles.footerLabel}>
                       Я принимаю условия{" "}
@@ -211,9 +258,9 @@ export default function Footer() {
 
                   <button
                     type="submit"
-                    disabled={!isAgreed || isLoading}
+                    disabled={isSubmitDisabled}
                     className={`${styles.footerSubmitButton} ${
-                      !isAgreed || isLoading ? styles.disabled : ""
+                      isSubmitDisabled ? styles.disabled : ""
                     }`}
                   >
                     {isLoading ? "Отправка..." : "Оставить заявку"}
@@ -336,7 +383,19 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className={styles.bigTag}>RE SEARCH IT</div>
+          <div
+            className={styles.bigTagWrap}
+            ref={bigWrapRef}
+            aria-hidden="true"
+          >
+            <div
+              className={styles.bigTag}
+              ref={bigTextRef}
+              style={{ transform: `scaleX(${bigScaleX})` }}
+            >
+              RE SEARCH IT
+            </div>
+          </div>
 
           <div className={styles.divrBlock}>
             <div className={styles.divrLink}>
@@ -348,7 +407,7 @@ export default function Footer() {
               </Link>
             </div>
             <div className={styles.divrLink}>
-              <Link href="/politica">Пользовательское соглашение</Link>
+              <Link href="/agreement">Пользовательское соглашение</Link>
             </div>
           </div>
         </div>

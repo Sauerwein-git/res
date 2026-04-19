@@ -82,7 +82,7 @@ export default function ProducerBlock() {
             <div className={`${styles.rightBlock} ${styles.dfc}`}>
               <div className={styles.kov}>« »</div>
               <div className={styles.secText}>
-                Раз в месяц анализирую ситуацию в бизнесе каждого клиент,
+                Раз в месяц анализирую ситуацию в бизнесе каждого клиента,
                 перекладываю свой опыт по захвату лидерской доли рынка и делюсь
                 советами, как бы я вел бизнес и какие процессы можно изменить,
                 чтобы ускорить рост.

@@ -4,7 +4,7 @@ import Footer from "../../../components/footer/footer";
 import DynamicHeader from "../../../components/header/header";
 import TagBlock from "../../../components/seo/tagBlock/tagBlock";
 import { Benefit } from "../../../components/seo/benefit/benefit";
-import { Case } from "../../../components/context/case/case";
+import { Case } from "../../../components/seo/case/case";
 
 import { Reviews } from "../../../components/context/reviews/reviews";
 import { Rules } from "../../../components/seo/rule/rules";

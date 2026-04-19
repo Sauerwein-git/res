@@ -74,6 +74,14 @@ export const Rules: React.FC = () => {
             </div>
           </div>
           <button type="button" className={styles.button} onClick={openModal}>
+            <img
+              src="/img/seo2.svg"
+              alt=""
+              aria-hidden="true"
+              width={1520}
+              height={90}
+              className={styles.desktopButtonGraphic}
+            />
             Начать с бесплатного аудита [<span className={styles.arrow}>→</span>
             ]
           </button>

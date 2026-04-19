@@ -44,7 +44,7 @@ export default function SettingBlock() {
             </div>
             <div className={styles.rightBlock}>
               <Image
-                src="/img/otchet.png"
+                src="/img/otchet.webp"
                 alt="yandex"
                 width={677}
                 height={409}

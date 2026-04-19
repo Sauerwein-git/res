@@ -67,7 +67,6 @@ export default function TagBlock() {
                   alt="arrow"
                   width={40}
                   height={20}
-                  style={{ marginLeft: "5px" }}
                 />
               </button>
             </div>

@@ -172,14 +172,6 @@ export const Reviews: React.FC = () => {
                 >
                   TG
                 </Link>
-                <Link
-                  href="https://www.whatsapp.com/?lang=ru_RU"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.ctaButton}
-                >
-                  WA
-                </Link>
               </div>
             </div>
           </div>

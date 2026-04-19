@@ -85,13 +85,15 @@
   gap: 5px;
   font-family: "BebasNeue";
   font-weight: 700;
-  font-size: 28px;
-  line-height: 100%;
-  letter-spacing: 0.56px;
-  color: rgba(255, 255, 255, 1);
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+  color: transparent;
   max-width: 1520px;
   height: 90px;
-  background: rgba(253, 76, 56, 1);
+  background:
+    url("/img/bigRedButton.svg") center / 1520px 90px no-repeat,
+    rgba(253, 76, 56, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,11 +102,30 @@
   margin-top: 60px;
   width: 100%;
   border: none;
+  gap: 0;
+  overflow: hidden;
+}
+
+.desktopAuditGraphic {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: filter 0.2s ease;
+}
+
+.mobileButtonLabel {
+  display: none;
 }
 
 .button:hover {
-  background: rgba(255, 97, 79, 1);
+  background:
+    url("/img/bigRedButton.svg") center / 1520px 90px no-repeat,
+    rgba(253, 76, 56, 1);
   cursor: pointer;
+}
+
+.button:hover .desktopAuditGraphic {
+  filter: brightness(1.05);
 }
 
 .invBlock {
@@ -234,11 +255,21 @@
   .button {
     width: 345px;
     height: 70px;
+    background: rgba(253, 76, 56, 1);
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 1);
     display: flex;
     gap: 5px;
+  }
+
+  .desktopAuditGraphic {
+    display: none;
+  }
+
+  .mobileButtonLabel {
+    display: inline;
   }
 
   .arrow {

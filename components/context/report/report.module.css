@@ -3,6 +3,7 @@
   padding-top: 80px;
   padding-left: 40px;
   padding-right: 40px;
+  overflow: hidden;
 }
 
 .section {
@@ -62,18 +63,24 @@
   border-top: 1.85px solid rgba(255, 255, 255, 0.25);
   margin-top: 40px;
   display: flex;
+  align-items: flex-end;
+  gap: 36px;
 }
 
 .monitorBox img {
-  padding-left: 36px;
   position: relative;
   display: flex;
   align-items: end;
+  width: min(100%, 744px);
+  height: auto;
 }
 
 .images {
   display: flex;
   align-items: end;
+  justify-content: flex-end;
+  flex: 1 1 46%;
+  min-width: 0;
 }
 
 .smallBlog {
@@ -85,6 +92,7 @@
 .rightPart {
   box-sizing: border-box;
   width: 50%;
+  min-width: 0;
 }
 
 .left,
@@ -92,6 +100,7 @@
   display: flex;
   width: 50%;
   align-items: end;
+  min-width: 0;
 }
 
 .right {
@@ -119,7 +128,7 @@
 }
 
 .button {
-  width: 729px;
+  width: min(100%, 729px);
   height: 90px;
   background: rgba(255, 255, 255, 1);
   border-radius: 12px;
@@ -138,8 +147,14 @@
   border: none;
 }
 
+.desktopButtonGraphic {
+  display: none;
+  width: 100%;
+  height: auto;
+  transition: filter 0.2s ease;
+}
+
 .button img {
-  filter: brightness(0.25) saturate(0);
   position: relative;
   top: -3px;
 }
@@ -157,27 +172,140 @@
 }
 
 @media (max-width: 1515px) {
+  .background {
+    padding-top: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .tag {
+    font-size: 82px;
+    line-height: 74px;
+    letter-spacing: -1.2px;
+    max-width: 540px;
+  }
+
+  .leftPart {
+    flex: 1 1 54%;
+    width: auto;
+  }
+
+  .images {
+    flex: 1 1 46%;
+  }
+
+  .right {
+    padding-left: 48px;
+    font-size: 26px;
+    line-height: 30px;
+    letter-spacing: -0.8px;
+  }
+
+  .textBot,
+  .smallBlogText {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+  }
+
+  .smallBlog {
+    gap: 32px;
+  }
+
+  .smallBlogTag {
+    width: 112px;
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  .button {
+    height: 76px;
+    font-size: 24px;
+  }
+
   .monitorBox {
-    display: block;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 48px;
   }
 
   .leftPart,
   .rightPart {
     box-sizing: border-box;
-    width: 100%;
+    width: auto;
   }
 
   .monitorBox img {
+    position: static;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 951px) {
+  .background {
+    padding-top: 56px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .tag {
+    font-size: 68px;
+    line-height: 62px;
+    max-width: 460px;
+  }
+
+  .right {
     padding-left: 36px;
-    position: relative;
-    bottom: -4.5px;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.5px;
+  }
+
+  .textBot,
+  .smallBlogText {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.2px;
+  }
+
+  .smallBlogTag {
+    width: 96px;
+    font-size: 34px;
+    line-height: 36px;
+  }
+
+  .smallBlog {
+    gap: 24px;
+  }
+
+  .button {
+    height: 70px;
+    font-size: 20px;
+    letter-spacing: -0.2px;
+  }
+
+  .button img {
+    width: 32px;
+    height: 16px;
+  }
+
+  .pBm {
+    padding-bottom: 40px;
+  }
+
+  .pT {
+    padding-top: 40px !important;
+  }
+
+  .monitorBox {
+    padding-top: 32px;
+    margin-top: 32px;
+    gap: 24px;
   }
 }
 
 @media (max-width: 950px) {
+  .desktopButtonGraphic {
+    display: none;
+  }
+
   .background {
     padding-top: 40px;
     padding-left: 15px;
@@ -233,6 +361,15 @@
     gap: 2px;
     height: 70px;
   }
+
+  .button img {
+    width: 30px;
+    height: 15px;
+    object-fit: contain;
+    position: static;
+    transform: translateY(-1px);
+    margin-left: 0 !important;
+  }
   .mob {
     display: block;
   }
@@ -275,6 +412,34 @@
     height: 243px;
     position: relative;
     margin-left: 10px;
+  }
+}
+
+@media (min-width: 951px) {
+  .button {
+    background: transparent;
+    gap: 0;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    color: transparent;
+  }
+
+  .button > :not(.desktopButtonGraphic) {
+    display: none;
+  }
+
+  .button > .desktopButtonGraphic {
+    display: block;
+  }
+
+  .button:hover {
+    background: transparent;
+  }
+
+  .button:hover .desktopButtonGraphic {
+    filter: brightness(1.05);
   }
 }
 

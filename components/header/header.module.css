@@ -65,7 +65,7 @@
 .rightBLock {
   margin-top: 20px;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   position: relative;
   text-decoration: none;
 }
@@ -141,33 +141,36 @@
   width: 168px;
   height: 60px;
   border-radius: 8px;
-  border: 2px solid #c8d1d8;
-  background: #ffffff;
-  font-family: "BebasNeue";
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 17px;
-  letter-spacing: 0.48px;
+  border: none;
+  background: transparent;
   cursor: pointer;
   box-sizing: border-box;
-  padding: 0px;
+  padding: 0;
+  line-height: 1;
+  overflow: hidden;
 }
 
-.menu img {
-  position: relative;
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0;
+  line-height: 1;
 }
 
 .menu:hover {
-  background: #fcfbfb;
+  background: none;
 }
 
 .ravno {
   color: rgba(139, 151, 164, 1);
   margin-left: 5px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  line-height: 1;
 }
 
 .report {
@@ -178,33 +181,47 @@
   width: 270px;
   height: 60px;
   border-radius: 8px;
-  background: #fd4c38;
+  background: transparent;
   border: none;
-  font-family: "BebasNeue", sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 100%;
-  letter-spacing: -0.48px;
-  color: #ffffff;
   text-decoration: none;
   padding: 0;
   cursor: pointer;
+  line-height: 1;
+  overflow: hidden;
 }
 
 .report:hover {
-  background-color: rgb(243, 50, 50);
+  background: none;
 }
 
-.reportContent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
+.buttonGraphic {
+  display: block;
+  flex: none;
+  width: 100%;
+  height: auto;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.menu:hover .buttonGraphic,
+.menu:focus-visible .buttonGraphic {
+  filter: brightness(0.985);
+}
+
+.report:hover .buttonGraphic,
+.report:focus-visible .buttonGraphic {
+  filter: brightness(0.96);
+}
+
+.mobileMenuContent,
+.mobileReportContent {
+  display: none;
 }
 
 @media (max-width: 950px) {
-  .reportContent {
-    gap: 3px;
+  .flexss {
+    display: none;
   }
 }
 
@@ -236,7 +253,13 @@
 }
 
 .modalAudit {
-  padding: 0px;
+  padding: 0;
+  width: auto;
+  max-width: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
 }
 
 @keyframes fadeIn {
@@ -426,26 +449,10 @@
 .textSoon {
   width: 75px;
   height: 34px;
-  min-width: 75px;
-  border-radius: 8px;
-  background: rgba(253, 76, 56, 1);
-  border: none;
-  box-sizing: border-box;
-  font-family: "BebasNeue";
-  font-weight: 400;
-  font-size: 26px;
-  line-height: 100%;
-  letter-spacing: 0.52px;
-  display: flex;
-  padding-top: 5px;
-  justify-content: center;
-  color: rgba(255, 255, 255, 1);
+  display: block;
   margin-left: 18px;
   margin-top: 8px;
   margin-right: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .arrowEl {
@@ -476,6 +483,13 @@
 }
 
 @media (max-width: 700px) {
+  .modalOverlay {
+    align-items: flex-start;
+    padding: 20px 15px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
   .underFlex {
     padding: 0 15px;
   }
@@ -533,7 +547,7 @@
     font-family: "BebasNeue", sans-serif;
     font-weight: 700;
     font-size: 20px;
-    line-height: 100%;
+    line-height: 1;
     letter-spacing: 0.4px;
     cursor: pointer;
     margin: 0px;
@@ -541,10 +555,15 @@
     order: 2;
   }
 
-  .menu img {
-    position: relative;
-    top: 2px;
-    padding-bottom: 5px;
+  .buttonGraphic {
+    display: none;
+  }
+
+  .mobileMenuContent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
   }
 
   .report {
@@ -559,85 +578,160 @@
     background: none;
   }
 
-  .try {
-    display: none !important;
-  }
-
-  .notry {
-    display: block;
-    color: #ffffff;
-    text-align: center;
+  .mobileReportContent {
+    display: inline-flex;
     align-items: center;
-    margin-left: 20px;
+    justify-content: center;
   }
 
-  .report img {
-    position: relative;
-    left: -7px;
-    top: -3px;
+  .mobileButtonLabelSvg {
+    display: block;
+    width: auto;
+    height: 15px;
   }
 
   .modal {
-    padding: 20px;
-    width: 100%;
-    max-width: 325px;
-    max-height: 600px;
-    overflow: auto;
+    width: min(345px, 100%);
+    max-width: 345px;
+    max-height: calc(100dvh - 40px);
+    margin: 0 auto;
+    padding: 20px 14px 24px;
+    border-radius: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .modalAudit {
+    width: auto;
+    max-width: none;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
   }
 
   .modalColumn {
     border-right: none;
     border-bottom: 1px solid rgba(236, 237, 237, 1);
+    padding-bottom: 22px;
+    margin-bottom: 22px;
   }
 
   .modalTitle {
-    font-size: 40px;
-    line-height: 60px;
-    letter-spacing: -0.4px;
-    margin-left: 0px;
-    margin-top: 30px;
+    display: block;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
   }
 
   .modalList {
-    margin-left: 0px;
+    margin-left: 0;
   }
 
+  .modalList li,
   .modalList a {
     display: block;
     font-family: "VelaSans", sans-serif;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: -0.2px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.01em;
     color: rgba(134, 145, 156, 1);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     transition: none;
     text-decoration: none;
   }
 
+  .modalList li:last-child {
+    margin-bottom: 0;
+  }
+
+  .modalRedText,
+  .modalLinkButton {
+    font-family: "VelaSans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.01em;
+    color: rgba(134, 145, 156, 1);
+  }
+
   .modalTitleLastChild {
-    margin-top: 0px !important;
+    max-width: 100%;
+    margin-top: 0 !important;
+    margin-bottom: 18px;
+    font-size: 30px;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+
+  .modalTitleLastChild .red {
+    display: inline-block;
+    margin-top: 10px;
+    white-space: nowrap;
+  }
+
+  .modalTitleLastChild .red::after {
+    content: " ₽";
   }
 
   .metaLink {
-    margin-left: 0px;
-    margin-top: 30px;
+    margin: 0 0 22px;
     text-align: left;
   }
 
   .metaLinkLastChild {
-    margin-top: 0px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0;
   }
 
   .numberLink {
-    font-size: 18px;
-    line-height: 30px;
-    letter-spacing: -0.18px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
   }
 
   .linkOfMeta {
-    font-size: 40px;
-    line-height: 60px;
-    letter-spacing: -0.4px;
+    font-size: 26px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+    word-break: break-word;
   }
+
+  .typeOfLink {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .modalClose {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    font-size: 22px;
+  }
+
+  .arrowEl {
+    transform: translateY(-1px);
+  }
+}
+
+.Tag {
+  font-family: "BebasNeue", "Bebas Neue", sans-serif;
+  font-size: 40.2px;
+  line-height: 100%;
+  letter-spacing: -0.804px;
+  color: #404850;
+  margin-top: 26px;
+  margin-left: 0px;
+  margin-right: 20px;
+  font-weight: 700;
+  position: relative;
+  top: 3px;
+  display: inline-block;
+  width: fit-content;
+  white-space: nowrap;
 }

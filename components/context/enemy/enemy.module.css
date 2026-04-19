@@ -90,6 +90,17 @@
   gap: 5px;
   border: none;
   width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.desktopButtonGraphic {
+  display: none;
+  width: 100%;
+  height: auto;
+  transition: filter 0.2s ease;
+  border-radius: inherit;
+  display: block;
 }
 
 .button img {
@@ -103,6 +114,10 @@
 }
 
 @media (max-width: 950px) {
+  .desktopButtonGraphic {
+    display: none;
+  }
+
   .background {
     padding-top: 40px;
     padding-left: 15px;
@@ -120,6 +135,15 @@
     display: flex;
     gap: 5px;
     margin-top: 45px;
+  }
+
+  .button img {
+    width: 30px;
+    height: 15px;
+    object-fit: contain;
+    position: static;
+    transform: translateY(-1px);
+    margin-left: 0 !important;
   }
 
   .arrow {
@@ -177,4 +201,32 @@
 
 .mob {
   display: none;
+}
+
+@media (min-width: 951px) {
+  .button {
+    background: transparent;
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    color: transparent;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .button > :not(.desktopButtonGraphic) {
+    display: none;
+  }
+
+  .button > .desktopButtonGraphic {
+    display: block;
+  }
+
+  .button:hover {
+    background: transparent;
+  }
+
+  .button:hover .desktopButtonGraphic {
+    filter: brightness(1.05);
+  }
 }

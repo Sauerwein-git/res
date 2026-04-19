@@ -341,6 +341,13 @@
     color: rgba(64, 72, 80, 1);
   }
 
+  .rub {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: -0.4px;
+    vertical-align: baseline;
+  }
+
   .massText {
     font-family: "VelaSans";
     font-weight: 500;

@@ -209,12 +209,15 @@
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 0.4px;
+    gap: 4px;
   }
 
   .button img {
-    position: relative;
-    top: -2.5px;
-    width: 50px;
-    height: 45px;
+    width: 30px;
+    height: 15px;
+    object-fit: contain;
+    position: static;
+    transform: translateY(-1px);
+    margin-left: 0 !important;
   }
 }

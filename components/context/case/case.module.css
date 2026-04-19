@@ -173,6 +173,13 @@
   gap: 5px;
 }
 
+.desktopReadGraphic {
+  display: none;
+  width: 100%;
+  height: auto;
+  transition: filter 0.2s ease;
+}
+
 .readButton:hover {
   cursor: pointer;
   background: #ff614f;
@@ -436,6 +443,10 @@
     justify-content: space-between;
   }
 
+  .desktopReadGraphic {
+    display: none;
+  }
+
   .readButton {
     width: 305px;
     padding-top: 24.5px;
@@ -551,6 +562,74 @@
     background-color: rgba(253, 76, 56, 1);
     border-radius: 2px;
     transition: left 0.3s ease-out;
+  }
+}
+
+@media (min-width: 951px) {
+  .readButton {
+    background: transparent;
+    gap: 0;
+    transition:
+      filter 0.2s ease,
+      transform 0.2s ease;
+    overflow: hidden;
+  }
+
+  .readButton:hover {
+    background: transparent;
+  }
+
+  .readButton:hover .desktopReadGraphic {
+    filter: brightness(1.05);
+  }
+
+  .desktopReadGraphic {
+    display: block;
+  }
+
+  .textRB,
+  .imgRB {
+    display: none;
+  }
+}
+
+.readButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.textRB,
+.imgRB {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.imgRB img {
+  display: block;
+  position: static;
+}
+
+@media (max-width: 950px) {
+  .readButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 69px;
+  }
+
+  .imgRB img {
+    width: 30px;
+    height: 15px;
+    object-fit: contain;
+    transform: translateY(-1px);
   }
 }
 
@@ -1100,5 +1179,62 @@
     font-size: 50px !important;
     letter-spacing: 0px !important;
     line-height: 100% !important;
+  }
+}
+
+.readButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.textRB,
+.imgRB {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.imgRB img {
+  display: block;
+  position: static;
+}
+
+@media (max-width: 950px) {
+  .readButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 69px;
+  }
+}
+
+@media (min-width: 951px) {
+  .readButton {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    gap: 0;
+    transition:
+      filter 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .readButton:hover {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    filter: brightness(1.05);
+  }
+
+  .textRB,
+  .imgRB {
+    display: none;
   }
 }

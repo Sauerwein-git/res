@@ -63,7 +63,9 @@ const DynamicHeader = () => {
             <div className={styles.flexss}>
               <div className={styles.leftBlock}>
                 <Link href="/" aria-label="На главную">
-                  <div className={styles.Tag}>RE SEARCH IT</div>
+                  <div id="header-logo" className={styles.Tag}>
+                    RE SEARCH IT
+                  </div>
                   <div className={styles.description}>rock your business</div>
                 </Link>
               </div>
@@ -86,24 +88,28 @@ const DynamicHeader = () => {
                 onClick={toggleMenu}
                 aria-expanded={isMenuOpen}
                 aria-controls="header-menu-modal"
+                aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
               >
-                МЕНЮ&nbsp;&nbsp;
-                <span className={styles.ravno}>
-                  {isMenuOpen ? (
-                    <img
-                      src="/img/krest.png"
-                      alt="Закрыть"
-                      width={20}
-                      height={19}
-                    />
-                  ) : (
-                    <img
-                      src="/img/rav.png"
-                      alt="Открыть"
-                      width={30}
-                      height={5}
-                    />
-                  )}
+                <img
+                  className={styles.buttonGraphic}
+                  src={
+                    isMenuOpen
+                      ? "/img/menuButtonClose.svg"
+                      : "/img/menuButton.svg"
+                  }
+                  alt=""
+                  aria-hidden="true"
+                  width={168}
+                  height={60}
+                />
+                <span className={styles.mobileMenuContent} aria-hidden="true">
+                  <img
+                    className={styles.mobileButtonLabelSvg}
+                    src="/img/menuMob.svg"
+                    alt=""
+                    width={80}
+                    height={15}
+                  />
                 </span>
               </button>
 
@@ -111,24 +117,24 @@ const DynamicHeader = () => {
                 type="button"
                 className={styles.report}
                 onClick={openAuditModal}
+                aria-label="Оставить заявку"
               >
-                <span className={styles.reportContent}>
-                  <span className={styles.notry}>
-                    <img
-                      src="/img/smallzayavka.png"
-                      alt="Заявка"
-                      width={86}
-                      height={14}
-                    />
-                  </span>
-                  <span className={styles.try}>
-                    <img
-                      src="/img/zayavka.png"
-                      alt="Заявка"
-                      width={190}
-                      height={17}
-                    />
-                  </span>
+                <img
+                  className={styles.buttonGraphic}
+                  src="/img/zayavkaButton.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width={270}
+                  height={60}
+                />
+                <span className={styles.mobileReportContent} aria-hidden="true">
+                  <img
+                    className={styles.mobileButtonLabelSvg}
+                    src="/img/zayavMob.svg"
+                    alt=""
+                    width={84}
+                    height={15}
+                  />
                 </span>
               </button>
             </div>
@@ -205,7 +211,13 @@ const DynamicHeader = () => {
                       <div className={styles.titleTitle}>
                         Сайты и приложения
                       </div>
-                      <div className={styles.textSoon}>скоро</div>
+                      <img
+                        className={styles.textSoon}
+                        src="/img/menusoon.svg"
+                        alt="скоро"
+                        width={75}
+                        height={34}
+                      />
                     </div>
 
                     <ul className={styles.modalList}>
@@ -262,10 +274,6 @@ const DynamicHeader = () => {
                     <div className={styles.typeOfLink}>
                       <Link href="https://web.telegram.org/a/">
                         <div className={styles.linkOfMeta}>Telegram</div>
-                      </Link>
-                      <div className={styles.linkOfMeta}> / </div>
-                      <Link href="https://www.whatsapp.com/?lang=ru_RU">
-                        <div className={styles.linkOfMeta}>WhatsApp</div>
                       </Link>
                     </div>
                   </div>

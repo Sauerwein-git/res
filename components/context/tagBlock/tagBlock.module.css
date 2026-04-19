@@ -97,9 +97,32 @@
   border: none;
 }
 
+.desktopAuditGraphic {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: filter 0.2s ease;
+}
+
 .anchorBut:hover {
   background: rgba(255, 97, 79, 1);
   cursor: pointer;
+}
+
+.pc .anchorBut {
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pc .anchorBut:hover {
+  background: transparent;
+}
+
+.pc .anchorBut:hover .desktopAuditGraphic {
+  filter: brightness(1.06);
 }
 
 .imageBlock {
@@ -120,6 +143,15 @@
   text-decoration: none;
 }
 
+.back :global(.arrow) {
+  position: relative;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
 @media (max-width: 950px) {
   .mob {
     display: block;
@@ -131,7 +163,7 @@
 
   .background {
     background-color: #404850;
-    padding-top: 100px;
+    padding-top: 96px;
     padding-bottom: 40px;
     padding-left: 15px;
     padding-right: 15px;
@@ -145,6 +177,8 @@
     margin: 0 auto;
     padding: 0px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
   }
 
   .tag {
@@ -154,7 +188,7 @@
     line-height: 72px;
     letter-spacing: -2.4px;
     color: #ffffff;
-    margin-top: 30px;
+    margin-top: 0;
   }
 
   .block {
@@ -190,7 +224,7 @@
 
   .text {
     font-family: "VelaSans";
-    margin-top: 20px;
+    margin-top: 24px;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
@@ -208,10 +242,12 @@
     color: rgba(255, 255, 255, 0.5);
     display: flex;
     gap: 5px;
+    margin-bottom: 30px;
   }
 
   .anchorBut {
-    width: 345px;
+    width: 100%;
+    max-width: 345px;
     min-height: 70px;
     background: rgba(253, 76, 56, 1);
     border-radius: 12px;
@@ -226,7 +262,11 @@
     color: rgba(255, 255, 255, 1);
     display: flex;
     gap: 5px;
-    margin-top: 40px;
+    margin-top: 32px;
+  }
+
+  .desktopAuditGraphic {
+    display: none;
   }
 
   .anchorBut:hover {
@@ -237,6 +277,7 @@
   .imageBlock {
     display: flex;
     gap: 18px;
+    margin-top: 30px;
   }
 
   .imageBlock img {

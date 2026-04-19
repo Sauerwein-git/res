@@ -163,29 +163,37 @@
 .anchorBut {
   max-width: 720px;
   min-height: 90px;
-  background: rgba(253, 76, 56, 1);
+  background:
+    url("/img/ostZayav.svg") center / 461px 90px no-repeat,
+    rgba(253, 76, 56, 1);
   border-radius: 12px;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   font-family: "BebasNeue";
-  font-size: 28px;
-  line-height: 100%;
-  letter-spacing: -0.56px;
-  color: rgba(255, 255, 255, 1);
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+  color: transparent;
   display: flex;
-  gap: 5px;
+  gap: 0;
   margin-top: 30px;
+  border: none;
+  overflow: hidden;
 }
 
 .anchorBut img {
   position: relative;
   top: -3px;
+  display: none;
 }
 
 .anchorBut:hover {
-  background: rgba(255, 97, 79, 1);
+  background:
+    url("/img/ostZayav.svg") center / 461px 90px no-repeat,
+    rgba(253, 76, 56, 1);
+  filter: brightness(1.05);
   cursor: pointer;
 }
 
@@ -386,6 +394,10 @@
     gap: 5px;
   }
 
+  .anchorBut img {
+    display: block;
+  }
+
   .anchorBut:hover {
     background: rgba(255, 97, 79, 1);
     cursor: pointer;
@@ -500,8 +512,19 @@
   font-weight: 700;
 }
 
+.desktopSubmitGraphic {
+  display: none;
+  width: 100%;
+  height: auto;
+  transition: filter 0.2s ease;
+}
+
 /* МОБИЛЬНАЯ ВЕРСИЯ — переопределите стили внутри @media */
 @media (max-width: 950px) {
+  .desktopSubmitGraphic {
+    display: none;
+  }
+
   .name,
   .number {
     height: 70px;
@@ -532,5 +555,45 @@
     font-size: 20px;
     letter-spacing: -0.4px;
     margin-top: 20px;
+  }
+
+  .anchorBut img {
+    width: 30px;
+    height: 15px;
+    object-fit: contain;
+    position: static;
+    transform: translateY(-1px);
+    margin-left: 0 !important;
+  }
+}
+
+@media (min-width: 951px) {
+  .anchorBut {
+    max-width: 720px;
+    min-height: 90px;
+    background: transparent;
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    color: transparent;
+    gap: 0;
+    border: none;
+    overflow: hidden;
+  }
+
+  .anchorBut > :not(.desktopSubmitGraphic) {
+    display: none;
+  }
+
+  .anchorBut > .desktopSubmitGraphic {
+    display: block;
+  }
+
+  .anchorBut:hover {
+    background: transparent;
+  }
+
+  .anchorBut:hover .desktopSubmitGraphic {
+    filter: brightness(1.05);
   }
 }

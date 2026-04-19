@@ -65,6 +65,14 @@ export default function Nose() {
                 className={styles.button}
                 onClick={openModal}
               >
+                <img
+                  src="/img/contsib.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width={1520}
+                  height={90}
+                  className={styles.desktopButtonGraphic}
+                />
                 Начать с бесплатного аудита{" "}
                 <Image
                   src="/img/cartArrow.png"

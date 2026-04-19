@@ -50,6 +50,14 @@ export default function Setting() {
           <div className={styles.upBox}>
             <div className={styles.tag}>Дальше – настройка кампаний</div>
             <button type="button" className={styles.button} onClick={openModal}>
+              <img
+                src="/img/contthb.svg"
+                alt=""
+                aria-hidden="true"
+                width={459}
+                height={90}
+                className={styles.desktopButtonGraphic}
+              />
               Начать с бесплатного аудита{" "}
               <Image
                 src="/img/cartArrow.png"

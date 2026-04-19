@@ -47,6 +47,16 @@
   margin-bottom: 30px;
   border: none;
   width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.desktopButtonGraphic {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+  transition: filter 0.2s ease;
 }
 
 .button img {
@@ -75,6 +85,12 @@
 .left {
   display: flex;
   align-items: end;
+}
+
+.left img {
+  width: 100%;
+  max-width: 744px;
+  height: auto;
 }
 .up,
 .lr,
@@ -124,7 +140,69 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-@media (max-width: 1590px) {
+@media (max-width: 1400px) {
+  .tag {
+    font-size: 128px;
+    line-height: 112px;
+    letter-spacing: -2.4px;
+    max-width: 1140px;
+  }
+
+  .up {
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.22px;
+  }
+
+  .underText {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.56px;
+  }
+
+  .button {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .background {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .tag {
+    font-size: 112px;
+    line-height: 100px;
+    letter-spacing: -2px;
+    max-width: 1000px;
+  }
+
+  .up {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+
+  .lr,
+  .rr {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .rr {
+    padding-left: 20px;
+  }
+
+  .underText {
+    margin-top: 24px;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+  }
+}
+
+@media (max-width: 1200px) {
   .box {
     flex-direction: column;
     position: relative;
@@ -145,6 +223,10 @@
 }
 
 @media (max-width: 950px) {
+  .desktopButtonGraphic {
+    display: none;
+  }
+
   .background {
     padding-top: 27px;
     padding-left: 15px;
@@ -162,6 +244,15 @@
     display: flex;
     gap: 5px;
     margin-top: 45px;
+  }
+
+  .button img {
+    width: 30px;
+    height: 15px;
+    object-fit: contain;
+    position: static;
+    transform: translateY(-1px);
+    margin-left: 0 !important;
   }
 
   .arrow {
@@ -229,4 +320,31 @@
 
 .mob {
   display: none;
+}
+
+@media (min-width: 951px) {
+  .button {
+    background: transparent;
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    color: transparent;
+    gap: 0;
+  }
+
+  .button > :not(.desktopButtonGraphic) {
+    display: none;
+  }
+
+  .button > .desktopButtonGraphic {
+    display: block;
+  }
+
+  .button:hover {
+    background: transparent;
+  }
+
+  .button:hover .desktopButtonGraphic {
+    filter: brightness(1.05);
+  }
 }

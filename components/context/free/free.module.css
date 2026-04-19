@@ -198,6 +198,15 @@
   text-align: center;
   cursor: pointer;
   transition: background 0.2s;
+  overflow: hidden;
+}
+
+.desktopSubmitGraphic {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+  transition: filter 0.2s ease;
 }
 
 .arrow {
@@ -219,6 +228,10 @@
 }
 
 @media (max-width: 950px) {
+  .desktopSubmitGraphic {
+    display: none;
+  }
+
   .background {
     padding-top: 40px;
     padding-left: 15px;
@@ -341,4 +354,32 @@
     height: 35px;
     width: 50%;
   }
+}
+
+@media (min-width: 951px) {
+  .submitButton {
+    background: transparent;
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    color: transparent;
+    border-radius: 12px;
+  }
+
+  .submitButton > :not(.desktopSubmitGraphic) {
+    display: none;
+  }
+
+  .submitButton > .desktopSubmitGraphic {
+    display: block;
+  }
+
+  .submitButton:hover {
+    background: transparent;
+  }
+
+  .submitButton:hover .desktopSubmitGraphic {
+    filter: brightness(1.05);
+  }
+
 }

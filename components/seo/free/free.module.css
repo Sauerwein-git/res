@@ -186,24 +186,40 @@
 .submitButton {
   max-width: 719px;
   height: 90px;
-  background: rgba(253, 76, 56, 1);
+  background: transparent;
   border: none;
   border-radius: 8px;
   color: rgba(255, 255, 255, 1);
-  font-family: "BebasNeue";
+  font-family: "Bebas Neue", "BebasNeue", sans-serif;
   font-weight: 700;
   font-size: 28px;
-  line-height: 100%;
-  letter-spacing: 0.56px;
+  line-height: 1;
+  letter-spacing: 0.02em;
   text-align: center;
   cursor: pointer;
-  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  will-change: transform;
+  padding: 0;
 }
 
-.arrow {
-  position: relative;
-  top: -3px;
-  font-weight: 600;
+.submitButton img {
+  max-width: 100%;
+  height: auto;
+}
+
+.submitButton:disabled {
+  cursor: not-allowed;
+}
+
+.submitButton:not(:disabled):hover {
+  opacity: 0.9;
 }
 
 .pc {
@@ -286,12 +302,15 @@
   }
 
   .submitButton {
-    font-size: 20px;
-    line-height: 100%;
-    letter-spacing: 0.4px;
     max-width: 346px;
     height: 70px;
     margin-bottom: 40px;
+    padding: 0;
+  }
+
+  .submitButton img {
+    max-width: 100%;
+    height: auto;
   }
 
   .num {
@@ -316,10 +335,6 @@
     left: 21.5px; /* центр круга — 60/2 = 30 */
     top: 40px; /* начинаем под первым кругом */
     z-index: 1;
-  }
-
-  .arrow {
-    top: -3px;
   }
 
   .form {

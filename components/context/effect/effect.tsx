@@ -188,6 +188,14 @@ export default function Effect() {
                   "Отправка..."
                 ) : (
                   <>
+                    <img
+                      src="/img/contostz.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width={461}
+                      height={90}
+                      className={styles.desktopSubmitGraphic}
+                    />
                     Оставить заявку{" "}
                     <Image
                       src="/img/cartArrow.png"

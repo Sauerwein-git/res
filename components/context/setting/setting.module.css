@@ -131,13 +131,15 @@
 .button {
   font-family: "BebasNeue";
   font-weight: 700;
-  font-size: 28px;
-  line-height: 100%;
-  letter-spacing: 0.56px;
-  color: rgba(255, 255, 255, 1);
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+  color: transparent;
   width: 459px;
   height: 90px;
-  background: rgba(253, 76, 56, 1);
+  background:
+    url("/img/startFreeAuditRedButton.svg") center / 459px 90px no-repeat,
+    rgba(253, 76, 56, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,16 +147,28 @@
   border-radius: 12px;
   margin-top: 60px;
   border: none;
-  gap: 5px;
+  gap: 0;
+  overflow: hidden;
+}
+
+.desktopButtonGraphic {
+  display: none;
+  width: 100%;
+  height: auto;
+  transition: filter 0.2s ease;
 }
 
 .button img {
   position: relative;
   top: -3px;
+  display: none;
 }
 
 .button:hover {
-  background: rgba(255, 97, 79, 1);
+  background:
+    url("/img/startFreeAuditRedButton.svg") center / 459px 90px no-repeat,
+    rgba(253, 76, 56, 1);
+  filter: brightness(1.05);
   cursor: pointer;
 }
 
@@ -225,7 +239,17 @@
   }
 
   .button {
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 1);
+    background: rgba(253, 76, 56, 1);
+    gap: 5px;
     margin-bottom: 30px;
+  }
+
+  .button img {
+    display: block;
   }
   .blogMobile {
     width: 100%;
@@ -312,6 +336,19 @@
     cursor: pointer;
   }
 
+  .desktopButtonGraphic {
+    display: none;
+  }
+
+  .button img {
+    width: 30px;
+    height: 15px;
+    object-fit: contain;
+    position: static;
+    transform: translateY(-1px);
+    margin-left: 0 !important;
+  }
+
   .button:hover {
     background: rgba(255, 97, 79, 1);
   }
@@ -327,5 +364,28 @@
     margin-top: 20px;
     border-top: 1px solid rgba(224, 228, 231, 1);
     margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 951px) {
+  .button {
+    background: transparent;
+  }
+
+  .button > :not(.desktopButtonGraphic) {
+    display: none;
+  }
+
+  .button > .desktopButtonGraphic {
+    display: block;
+  }
+
+  .button:hover {
+    background: transparent;
+    filter: none;
+  }
+
+  .button:hover .desktopButtonGraphic {
+    filter: brightness(1.05);
   }
 }

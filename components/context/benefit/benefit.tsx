@@ -135,8 +135,18 @@ export const Benefit: React.FC = () => {
           </div>
 
           <button type="button" className={styles.button} onClick={openModal}>
+            <img
+              src="/img/contsb.svg"
+              alt=""
+              aria-hidden="true"
+              width={1520}
+              height={90}
+              className={styles.desktopAuditGraphic}
+            />
+            <span className={styles.mobileButtonLabel}>
             Начать с бесплатного аудита [<span className={styles.arrow}>→</span>
             ]
+            </span>
           </button>
 
           <div className="mob">

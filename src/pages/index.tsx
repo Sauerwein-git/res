@@ -13,7 +13,7 @@ import { Team } from "../../components/home/team/team";
 import Footer from "../../components/footer/footer";
 import DynamicHeader from "../../components/header/header";
 
-import ZoomFallbackWrapper from "@/components/ZoomFallbackWrapper"; // ← новое
+import ZoomFallbackWrapper from "@/components/ZoomFallbackWrapper";
 
 export default function Home() {
   return (
@@ -23,7 +23,6 @@ export default function Home() {
         <title>reSearch it</title>
       </Head>
 
-      {/* Zoom только через CSS для Chromium/Safari; fallback — для Firefox */}
       <ZoomFallbackWrapper>
         <div className={styles.home_section}>
           <DynamicHeader />

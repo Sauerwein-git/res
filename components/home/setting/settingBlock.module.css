@@ -101,11 +101,15 @@
   align-items: end;
 }
 
+.pc {
+  display: block;
+}
+
 @media (max-width: 950px) {
   .background {
     padding-top: 40px;
     padding-bottom: 0px;
-    padding-left: 0px;
+    padding-left: 15px;
     padding-right: 15px;
     position: relative;
     box-sizing: border-box;
@@ -116,6 +120,8 @@
   }
 
   .section {
+    max-width: 375px;
+    width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
     overflow: hidden;
@@ -128,9 +134,9 @@
     line-height: 60px;
     letter-spacing: -0.7px;
     max-width: 345px;
-    margin-left: 15px;
-    margin-right: 15px;
     width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     color: rgba(255, 255, 255, 1);
   }
 
@@ -141,8 +147,10 @@
   .bottomBlock {
     margin-top: 30px;
     display: flex;
-    justify-content: space-between;
-    margin-left: 15px;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-left: 0;
   }
 
   .white {
@@ -161,7 +169,7 @@
     color: rgba(255, 255, 255, 0.8);
     border-top: none;
     border-bottom: 1.67px solid rgba(255, 255, 255, 0.15);
-    max-width: 760px;
+    max-width: 345px;
     width: 100%;
   }
 
@@ -178,7 +186,7 @@
   }
 
   .wdT {
-    max-width: 328px;
+    max-width: 345px;
     width: 100%;
   }
 
@@ -196,12 +204,12 @@
 
   .leftPage {
     border-right: none;
-    padding-right: 50px;
-    margin-top: 10px;
+    padding-right: 0;
+    margin-top: 0;
   }
 
   .miniTag {
-    margin-top: 46px;
+    margin-top: 30px;
     font-family: "BebasNeue";
     font-weight: 700;
     font-size: 40px;
@@ -219,12 +227,20 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .rightBlock {
+    width: 100%;
+    display: block;
   }
 
   .rightBlock img {
+    display: block;
     width: 345px;
     height: 208px;
-    margin-bottom: -10px;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 0;
   }
 }

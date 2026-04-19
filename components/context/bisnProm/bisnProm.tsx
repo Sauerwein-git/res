@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./bisnProm.module.css";
 import Link from "next/link";
@@ -92,14 +91,6 @@ export default function BisnProm() {
                   className={styles.ctaButton}
                 >
                   TG
-                </Link>
-                <Link
-                  href="https://www.whatsapp.com/?lang=ru_RU"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.ctaButton}
-                >
-                  WA
                 </Link>
               </div>
             </div>

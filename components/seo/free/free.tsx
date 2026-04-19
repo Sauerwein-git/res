@@ -125,17 +125,17 @@ export default function Free() {
                 <button
                   type="submit"
                   disabled={!isAgreed || isLoading}
-                  className={`${styles.submitButton} ${
-                    (!isAgreed || isLoading) && styles.disabled
-                  }`}
+                  className={styles.submitButton}
                 >
                   {isLoading ? (
                     "Отправка..."
                   ) : (
-                    <>
-                      Оставить заявку [ <span className={styles.arrow}>→</span>{" "}
-                      ]
-                    </>
+                    <Image
+                      src="/img/seo3.svg"
+                      alt="Оставить заявку"
+                      width={719}
+                      height={90}
+                    />
                   )}
                 </button>
               </form>

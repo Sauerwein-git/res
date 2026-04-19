@@ -45,11 +45,18 @@ function getErrorMessage(data: unknown): string | null {
   return typeof err === "string" && err.trim() ? err : null;
 }
 
+const ARROW_W = 37.65;
+const ARROW_H = 20;
+
+const ARROW_W_MOB = 30.12;
+const ARROW_H_MOB = 14.56;
+
 export default function TraficBlock() {
   const [name, setName] = useState("");
   const [phoneDigits, setPhoneDigits] = useState("");
   const [isAgreed, setIsAgreed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const router = useRouter();
 
@@ -66,17 +73,18 @@ export default function TraficBlock() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setError(null);
 
     const cleanName = name.trim();
     const cleanPhone = phoneDigits;
 
     if (!cleanName || cleanPhone.length !== 11) {
-      alert("Пожалуйста, заполните имя и корректный номер телефона.");
+      setError("Пожалуйста, заполните имя и корректный номер телефона.");
       return;
     }
 
     if (!isAgreed) {
-      alert("Пожалуйста, примите условия политики конфиденциальности.");
+      setError("Пожалуйста, примите условия политики конфиденциальности.");
       return;
     }
 
@@ -105,10 +113,10 @@ export default function TraficBlock() {
       }
 
       const msg = getErrorMessage(data) ?? "Неизвестная ошибка";
-      alert(`Ошибка: ${msg}`);
+      setError(`Ошибка: ${msg}`);
     } catch (err) {
       console.error(err);
-      alert("Не удалось отправить заявку. Проверьте соединение.");
+      setError("Не удалось отправить заявку. Проверьте соединение.");
     } finally {
       setIsLoading(false);
     }
@@ -168,8 +176,9 @@ export default function TraficBlock() {
                   <Image
                     src="/img/cartArrow.png"
                     alt="arrow"
-                    width={37.65}
-                    height={18.2}
+                    width={ARROW_W}
+                    height={ARROW_H}
+                    className={styles.arrowImg}
                   />
                 </div>
 
@@ -184,8 +193,9 @@ export default function TraficBlock() {
                     <Image
                       src="/img/cartArrow.png"
                       alt="arrow"
-                      width={30.12}
-                      height={14.56}
+                      width={ARROW_W_MOB}
+                      height={ARROW_H_MOB}
+                      className={styles.arrowImg}
                     />
                   </div>
                 </div>
@@ -228,14 +238,15 @@ export default function TraficBlock() {
 
                 <div className={styles.botFloor}>
                   <div className={styles.contextText}>
-                    Привлекаем лидов в 5 раз дешевле, чем с других каналов
-                    трафика
+                    Привлекаем лидов в 5 раз дешевле, <br />
+                    чем с других каналов трафика
                   </div>
                   <Image
                     src="/img/cartArrow.png"
                     alt="arrow"
-                    width={37.65}
-                    height={18.2}
+                    width={ARROW_W}
+                    height={ARROW_H}
+                    className={styles.arrowImg}
                   />
                 </div>
 
@@ -258,8 +269,9 @@ export default function TraficBlock() {
                     <Image
                       src="/img/cartArrow.png"
                       alt="arrow"
-                      width={30.12}
-                      height={14.56}
+                      width={ARROW_W_MOB}
+                      height={ARROW_H_MOB}
+                      className={styles.arrowImg}
                     />
                   </div>
                 </div>
@@ -302,6 +314,8 @@ export default function TraficBlock() {
                 />
               </div>
 
+              {error && <div className={styles.errorMessage}>{error}</div>}
+
               <div className={styles.confirmZone}>
                 <div className={styles.buttonZone}>
                   <button
@@ -341,15 +355,25 @@ export default function TraficBlock() {
                   "Отправка..."
                 ) : (
                   <>
-                    <span className={styles.textButtontext}>
+                    <Image
+                      src="/img/whiteStartButton.svg"
+                      alt="Начать с бесплатного аудита"
+                      width={689}
+                      height={90}
+                      className={styles.affButtonGraphic}
+                    />
+                    <span className={styles.affButtonMobileContent}>
+                      <span className={styles.textButtontext}>
                       Начать с бесплатного аудита
                     </span>
-                    <Image
+                      <Image
                       src="/img/cartArrow.png"
                       alt="arrow"
-                      width={40}
-                      height={20}
+                      width={ARROW_W}
+                      height={ARROW_H}
+                      className={styles.arrowImg}
                     />
+                    </span>
                   </>
                 )}
               </button>
@@ -357,7 +381,9 @@ export default function TraficBlock() {
           </div>
         </div>
 
-        <div className={styles.soon}>СКОРО</div>
+        <div className={styles.soon}>
+          <img src="/img/SoonBut.svg" alt="Скоро" width={75} height={34} />
+        </div>
 
         <div className={styles.invBlock} aria-hidden="true">
           <div className={styles.leftBlockInv} />

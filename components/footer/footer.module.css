@@ -11,8 +11,6 @@
   max-width: 1520px;
   width: 100%;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 40px;
   box-sizing: border-box;
 }
 
@@ -113,8 +111,6 @@
   margin-top: 12px;
 }
 
-/* --- form --- */
-
 .footerForm {
   display: flex;
   flex-direction: column;
@@ -166,12 +162,12 @@
   padding: 0;
 }
 
-.footerCheckbox.checked {
+.checked {
   background: rgba(253, 76, 56, 1);
   border-color: rgba(253, 76, 56, 1);
 }
 
-.footerCheckbox.checked::after {
+.checked::after {
   content: "✓";
   position: absolute;
   top: 50%;
@@ -200,37 +196,37 @@
   width: 100%;
   margin-top: 30px;
   height: 90px;
-  background: rgba(253, 76, 56, 1);
+  background:
+    url("/img/footerButton.svg") center / 719px 90px no-repeat,
+    rgba(253, 76, 56, 1);
   border: none;
   border-radius: 8px;
-  color: white;
+  color: transparent;
   font-family: "BebasNeue";
   font-weight: 700;
-  font-size: 28px;
-  line-height: 100%;
-  letter-spacing: 0.56px;
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  gap: 5px;
+  gap: 0;
+  overflow: hidden;
 }
 
 .footerSubmitButton img {
   position: relative;
   top: -2px;
+  display: none;
 }
 
 .footerSubmitButton:hover:not(:disabled) {
-  background: rgba(255, 97, 79, 1);
+  background:
+    url("/img/footerButton.svg") center / 719px 90px no-repeat,
+    rgba(253, 76, 56, 1);
+  filter: brightness(1.05);
 }
-
-.disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-/* --- brand block --- */
 
 .lTag {
   color: rgba(255, 255, 255, 1);
@@ -255,8 +251,6 @@
   gap: 25px;
   margin-top: 40px;
 }
-
-/* --- contacts/menu --- */
 
 .placeText {
   color: rgba(255, 255, 255, 0.5);
@@ -346,10 +340,19 @@
 }
 
 .obl {
-  /* на мобиле у тебя был низ-бордер — оставим класс для совместимости */
 }
 
-/* --- huge title --- */
+.bigTagWrap {
+  width: 100%;
+  max-width: 1520px;
+  margin: 50px auto 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
 
 .bigTag {
   font-family: "BebasNeue";
@@ -359,14 +362,9 @@
   color: #ffffff;
   white-space: nowrap;
   line-height: 415px;
-  margin-left: -15px;
-  transform-origin: left bottom;
-  width: 100%;
-  z-index: 1;
-  position: relative;
-  margin-top: 50px;
-  max-height: 350px;
-  overflow: hidden;
+  transform-origin: center bottom;
+  will-change: transform;
+  display: inline-block;
 }
 
 .divrBlock {
@@ -390,17 +388,8 @@
   text-decoration: none;
 }
 
-/* helpers */
 .mobOnly {
   display: none;
-}
-
-/* --- responsive --- */
-
-@media (max-width: 1550px) {
-  .bigTag {
-    margin-left: -15px;
-  }
 }
 
 @media (max-width: 950px) {
@@ -409,11 +398,6 @@
     padding-bottom: 40px;
     padding-left: 15px;
     padding-right: 15px;
-  }
-
-  .section {
-    padding: 0;
-    overflow: hidden;
   }
 
   .invBlock {
@@ -477,9 +461,24 @@
   }
 
   .footerSubmitButton {
+    background: rgba(253, 76, 56, 1);
+    color: white;
     font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.36px;
     height: 50px;
     margin-top: 16px;
+    gap: 5px;
+  }
+
+  .footerSubmitButton img {
+    width: 30px;
+    height: 15px;
+    object-fit: contain;
+    position: static;
+    transform: translateY(-2px);
+    margin-left: 0 !important;
+    display: block;
   }
 
   .footerLabel {
@@ -492,13 +491,14 @@
     height: 14px;
   }
 
-  .footerCheckbox.checked::after {
+  .checked::after {
     font-size: 10px;
   }
 
   .imgBlock {
-    margin-top: 0;
-    margin-bottom: 20px;
+    order: 3;
+    margin-top: 20px;
+    margin-bottom: 0;
     gap: 15px;
   }
 
@@ -508,12 +508,14 @@
   }
 
   .lTag {
+    order: 1;
     font-size: 40px;
     letter-spacing: -0.8px;
     margin-bottom: 10px;
   }
 
   .lText {
+    order: 2;
     font-size: 15.72px;
     line-height: 17.27px;
     letter-spacing: -0.3px;
@@ -568,16 +570,41 @@
     margin-top: 10px;
   }
 
+  .bigTagWrap {
+    margin-top: 30px;
+  }
+
   .bigTag {
     font-size: 110px;
-    line-height: 1;
+    line-height: 110px;
     letter-spacing: -2.83px;
-    margin-top: 30px;
-    margin-left: 0;
-    max-height: 90px;
   }
 
   .mobOnly {
     display: inline;
   }
+}
+
+.placeAnswer a {
+  font: inherit;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.rightBlock a {
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+.caseTag a {
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+.divrBlock a {
+  font: inherit;
+  color: rgba(195, 195, 195, 0.5);
+  text-decoration: none;
 }

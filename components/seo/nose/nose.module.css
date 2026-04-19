@@ -35,6 +35,12 @@
   padding-top: 20px;
 }
 
+.arrow {
+  position: relative;
+  top: -1px;
+  font-weight: 600;
+}
+
 .left,
 .right {
   box-sizing: border-box;
@@ -58,26 +64,32 @@
 .button {
   font-family: "BebasNeue";
   font-weight: 700;
-  font-size: 28px;
-  line-height: 100%;
-  letter-spacing: 0.56px;
-  color: rgba(255, 255, 255, 1);
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+  color: transparent;
   max-width: 1520px;
   height: 90px;
-  background: rgba(253, 76, 56, 1);
+  background:
+    url("/img/startfree720x90.svg") center / 720px 90px no-repeat,
+    rgba(253, 76, 56, 1);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   border-radius: 12px;
   margin-top: 60px;
-  gap: 5px;
+  gap: 0;
   width: 100%;
   border: none;
+  overflow: hidden;
 }
 
 .button:hover {
-  background: rgba(255, 97, 79, 1);
+  background:
+    url("/img/startfree720x90.svg") center / 720px 90px no-repeat,
+    rgba(253, 76, 56, 1);
+  filter: brightness(1.05);
   cursor: pointer;
 }
 
@@ -110,6 +122,68 @@
   color: rgba(255, 255, 255, 1);
 }
 
+@media (max-width: 1400px) {
+  .tag {
+    font-size: 128px;
+    line-height: 112px;
+    letter-spacing: -2.4px;
+    max-width: 920px;
+  }
+
+  .text,
+  .textL {
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.22px;
+  }
+
+  .textR {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.56px;
+  }
+
+  .button {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .background {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .tag {
+    font-size: 112px;
+    line-height: 100px;
+    letter-spacing: -2px;
+    max-width: 820px;
+  }
+
+  .left,
+  .right {
+    padding-top: 24px;
+  }
+
+  .right {
+    padding-left: 24px;
+  }
+
+  .text,
+  .textL {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+
+  .textR {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+  }
+}
+
 @media (max-width: 950px) {
   .background {
     padding-top: 40px;
@@ -133,9 +207,11 @@
   .button {
     width: 345px;
     height: 70px;
+    background: rgba(253, 76, 56, 1);
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 1);
     display: flex;
     gap: 5px;
     margin-top: 0px;
@@ -143,7 +219,7 @@
 
   .arrow {
     position: relative;
-    top: -3px;
+    top: -2px;
     font-weight: 600;
   }
 

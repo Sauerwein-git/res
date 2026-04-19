@@ -120,7 +120,15 @@ export const Benefit: React.FC = () => {
                     Продвижение в выдаче <span className="red">нейросетей</span>
                   </div>
                 </div>
-                <div className={styles.NEW}>NEW</div>
+                <div className={styles.NEW}>
+                  <img
+                    src="/img/seonew.jpg"
+                    alt="NEW"
+                    width={75}
+                    height={34}
+                    className={styles.newBadgeGraphic}
+                  />
+                </div>
               </div>
               <div className={`${styles.rightBlock} ${styles.last}`}>
                 <div className={styles.textr}>
@@ -180,6 +188,14 @@ export const Benefit: React.FC = () => {
           </div>
 
           <div className={styles.button} onClick={openModal}>
+            <img
+              src="/img/seo2.svg"
+              alt=""
+              aria-hidden="true"
+              width={1520}
+              height={90}
+              className={styles.desktopButtonGraphic}
+            />
             Начать с бесплатного аудита [<span className={styles.arrow}>→</span>
             ]
           </div>

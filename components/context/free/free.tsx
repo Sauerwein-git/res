@@ -134,6 +134,14 @@ export default function Free() {
                     "Отправка..."
                   ) : (
                     <>
+                      <img
+                        src="/img/contsevb.svg"
+                        alt=""
+                        aria-hidden="true"
+                        width={719}
+                        height={90}
+                        className={styles.desktopSubmitGraphic}
+                      />
                       Оставить заявку{" "}
                       <Image
                         src="/img/cartArrow.png"

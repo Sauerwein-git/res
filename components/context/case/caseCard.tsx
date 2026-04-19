@@ -47,6 +47,14 @@ export const CaseCard: React.FC<CaseCardProps> = ({
         </div>
       </div>
       <div onClick={onClick} className={styles.readButton}>
+        <img
+          src="/img/readbuttoncont.svg"
+          alt=""
+          aria-hidden="true"
+          width={506}
+          height={90}
+          className={styles.desktopReadGraphic}
+        />
         <div className={styles.textRB}>читать полностью</div>
         <div className={styles.imgRB}>
           <Image src="/img/cartArrow.png" alt="arrow" width={35} height={20} />

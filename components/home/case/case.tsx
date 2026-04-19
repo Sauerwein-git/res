@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import styles from "./case.module.css";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import type { Swiper as SwiperClass } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import { caseData } from "./caseData";
 import { casePreviews } from "./casePreview";
 import { CaseCard } from "./caseCard";
+
+type CasePreview = {
+  market: string;
+  image: string;
+  resultText: string;
+  summaryText: string;
+  storyText: string;
+  tellText: string;
+};
+
+const previews = casePreviews as Record<number, CasePreview>;
 
 const getCaseType = (id: number): "context" | "seo" => {
   return [1, 2, 3, 4, 5].includes(id) ? "context" : "seo";
@@ -15,17 +27,39 @@ const getCaseType = (id: number): "context" | "seo" => {
 
 export const Case: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<"all" | "context" | "seo">(
-    "all"
+    "all",
   );
   const [activeModalId, setActiveModalId] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const [viewerOpen, setViewerOpen] = useState(false);
+  const [viewerSrc, setViewerSrc] = useState<string | null>(null);
+
   const filteredCaseIds = Object.keys(caseData)
-    .map(Number)
+    .map((key) => Number(key))
     .filter((id) => {
       const type = getCaseType(id);
       return activeFilter === "all" || activeFilter === type;
     });
+
+  const seoBottomImages = useMemo((): string[] => {
+    if (activeModalId == null) return [];
+    if (!caseData[activeModalId]) return [];
+    if (getCaseType(activeModalId) !== "seo") return [];
+    return (caseData[activeModalId].images ?? []).slice(0, 4);
+  }, [activeModalId]);
+
+  const seoCols = Math.min(4, seoBottomImages.length);
+
+  const openViewer = (src: string) => {
+    setViewerSrc(src);
+    setViewerOpen(true);
+  };
+
+  const closeViewer = () => {
+    setViewerOpen(false);
+    setViewerSrc(null);
+  };
 
   return (
     <>
@@ -84,32 +118,28 @@ export const Case: React.FC = () => {
               </div>
             </div>
           </div>
+
           <div className={styles.triggerButton}>
             <div
-              className={`${styles.allBut} ${
-                activeFilter === "all" ? styles.active : ""
-              }`}
+              className={`${styles.allBut} ${activeFilter === "all" ? styles.active : ""}`}
               onClick={() => setActiveFilter("all")}
             >
               ВСЕ
             </div>
             <div
-              className={`${styles.contBut} ${
-                activeFilter === "context" ? styles.active : ""
-              }`}
+              className={`${styles.contBut} ${activeFilter === "context" ? styles.active : ""}`}
               onClick={() => setActiveFilter("context")}
             >
               КОНТЕКСТ
             </div>
             <div
-              className={`${styles.seoBut} ${
-                activeFilter === "seo" ? styles.active : ""
-              }`}
+              className={`${styles.seoBut} ${activeFilter === "seo" ? styles.active : ""}`}
               onClick={() => setActiveFilter("seo")}
             >
               SEO
             </div>
           </div>
+
           <Swiper
             modules={[Navigation]}
             grabCursor={true}
@@ -120,12 +150,14 @@ export const Case: React.FC = () => {
             }}
             slidesPerView="auto"
             className={styles.swiper}
-            onSlideChange={(swiper) => {
-              setActiveIndex(swiper.activeIndex);
-            }}
+            onSlideChange={(swiper: SwiperClass) =>
+              setActiveIndex(swiper.activeIndex)
+            }
           >
             {filteredCaseIds.map((id) => {
-              const preview = casePreviews[id];
+              const preview = previews[id];
+              if (!preview) return null;
+
               return (
                 <SwiperSlide
                   className={`${styles.swiperSlide} ${styles.swiperSlideContent} MainProductSlider`}
@@ -154,9 +186,7 @@ export const Case: React.FC = () => {
                   style={{
                     left:
                       filteredCaseIds.length > 1
-                        ? `${
-                            (activeIndex / (filteredCaseIds.length - 1)) * 90
-                          }%`
+                        ? `${(activeIndex / (filteredCaseIds.length - 1)) * 90}%`
                         : "0%",
                   }}
                 ></div>
@@ -166,7 +196,6 @@ export const Case: React.FC = () => {
         </div>
       </div>
 
-      {/* МОДАЛЬНОЕ ОКНО — КОПИЯ ИЗ FOURTH */}
       {activeModalId !== null && caseData[activeModalId] && (
         <div
           className={styles.modalOverlay}
@@ -257,6 +286,7 @@ export const Case: React.FC = () => {
                     </div>
                   ))}
                 </div>
+
                 <div className={styles.secondResultBlock}>
                   {caseData[activeModalId].secondResultList?.map(
                     (result, index) => (
@@ -267,9 +297,7 @@ export const Case: React.FC = () => {
                         <div className={styles.secondResultLeft}>
                           <div className={styles.secondResultTitle}>
                             <div
-                              dangerouslySetInnerHTML={{
-                                __html: result.title,
-                              }}
+                              dangerouslySetInnerHTML={{ __html: result.title }}
                             />
                           </div>
                         </div>
@@ -281,10 +309,76 @@ export const Case: React.FC = () => {
                           />
                         </div>
                       </div>
-                    )
+                    ),
                   )}
                 </div>
               </div>
+            </div>
+
+            {getCaseType(activeModalId) === "seo" &&
+              seoBottomImages.length > 0 && (
+                <div className={styles.seoImagesWrap}>
+                  <div
+                    className={styles.seoImagesGrid}
+                    style={{
+                      gridTemplateColumns: `repeat(${seoCols}, minmax(0, 1fr))`,
+                    }}
+                  >
+                    {seoBottomImages.map((src, idx) => (
+                      <button
+                        key={`${activeModalId}_${idx}`}
+                        type="button"
+                        className={styles.seoImageItem}
+                        onClick={() => openViewer(src)}
+                        aria-label={`Открыть изображение ${idx + 1}`}
+                      >
+                        <Image
+                          src={encodeURI(src)}
+                          alt={`Изображение ${idx + 1}`}
+                          fill
+                          sizes="(max-width: 760px) 100vw, 1200px"
+                          className={styles.seoImage}
+                        />
+                        <div className={styles.seoImageHint}>
+                          Нажми, чтобы увеличить
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+          </div>
+        </div>
+      )}
+
+      {viewerOpen && viewerSrc && (
+        <div className={styles.imageViewerOverlay} onClick={closeViewer}>
+          <div
+            className={styles.imageViewerContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className={styles.imageViewerClose}
+              onClick={closeViewer}
+              aria-label="Закрыть изображение"
+            >
+              <Image
+                src="/img/close-icon.svg"
+                alt="Закрыть"
+                width={25}
+                height={25}
+              />
+            </button>
+            <div className={styles.imageViewerImg}>
+              <Image
+                src={encodeURI(viewerSrc)}
+                alt="Увеличенное изображение"
+                fill
+                sizes="100vw"
+                className={styles.imageViewerImgInner}
+                priority
+              />
             </div>
           </div>
         </div>

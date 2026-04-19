@@ -6,6 +6,33 @@
   padding-right: 40px;
 }
 
+@media (min-width: 951px) {
+  .readButton {
+    width: 506px;
+    height: 90px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    transition:
+      filter 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .readButton:hover {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    filter: brightness(1.05);
+  }
+}
+
 .section {
   max-width: 1600px;
   width: 100%;
@@ -1135,5 +1162,32 @@
     font-size: 50px !important;
     letter-spacing: 0px !important;
     line-height: 100% !important;
+  }
+}
+
+@media (min-width: 951px) {
+  .readButton {
+    width: 506px;
+    height: 90px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    transition:
+      filter 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .readButton:hover {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    filter: brightness(1.05);
   }
 }

@@ -1125,3 +1125,1162 @@
     line-height: 100% !important;
   }
 }
+
+.seoImagesWrap {
+  margin-top: 26px;
+  width: 100%;
+}
+
+.seoImagesGrid {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.seoImageItem {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(242, 242, 242, 1);
+}
+
+.seoImage {
+  object-fit: cover;
+}
+
+.background {
+  background-color: rgba(64, 72, 80, 1);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.section {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.smallTag {
+  font-family: "BebasNeue";
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0.56px;
+  color: rgba(153, 165, 177, 1);
+  display: flex;
+  justify-content: center;
+}
+
+.block {
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 2px solid rgba(116, 116, 116, 1);
+  display: flex;
+  margin-top: 40px;
+}
+
+.leftBlock,
+.rightBlock {
+  width: 50%;
+  box-sizing: border-box;
+  padding-top: 40px;
+}
+
+.leftBlock {
+  border-right: 2px solid rgba(116, 116, 116, 1);
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 100px;
+  letter-spacing: -2px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 100px;
+}
+
+.rightBlock {
+  padding-left: 40px;
+  font-family: "VelaSans";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.24px;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: space-between;
+}
+
+.textRightBlock {
+  max-width: 400px;
+  width: 100%;
+}
+
+.prevButton {
+  display: flex;
+  gap: 8px;
+}
+
+.navButtonWrapper {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.navButton {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.2s ease;
+}
+
+.navButtonHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.navButtonWrapper:hover .navButton {
+  opacity: 0;
+}
+
+.navButtonWrapper:hover .navButtonHover {
+  opacity: 1;
+}
+
+.triggerButton {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 65px;
+}
+
+.indicatorLine {
+  display: none;
+}
+
+.allBut,
+.contBut,
+.seoBut {
+  text-align: center;
+  width: 100%;
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 85px;
+  letter-spacing: -1.1px;
+  color: rgba(130, 142, 153, 1);
+  border-bottom: 3px solid rgba(130, 142, 153, 1);
+}
+
+.allBut:hover,
+.contBut:hover,
+.seoBut:hover {
+  color: rgba(253, 76, 56, 1);
+  border-bottom: 3px solid rgba(253, 76, 56, 1);
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 3px solid rgba(253, 76, 56, 1);
+  color: rgba(253, 76, 56, 1);
+}
+
+.swiper {
+  margin-top: 60px;
+  max-width: 1560px;
+  width: 100%;
+  margin-left: 30px;
+}
+
+.card {
+  width: 566px;
+  height: 830px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 12px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.readButton {
+  width: 506px;
+  height: 90px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(253, 76, 56, 1);
+  border-radius: 12px;
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: -0.56px;
+  color: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  gap: 5px;
+}
+
+.readButton:hover {
+  cursor: pointer;
+  background: #ff614f;
+}
+
+.market {
+  background: rgba(242, 242, 242, 1);
+  border-radius: 8px;
+  padding: 4px 10px;
+  box-sizing: border-box;
+  width: fit-content;
+  height: fit-content;
+  font-family: "VelaSans";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.18px;
+  color: rgba(112, 128, 144, 1);
+}
+
+.upper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lower {
+  margin-top: 30px;
+}
+
+.result {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: -0.6px;
+  color: rgba(64, 68, 72, 1);
+}
+
+.summary {
+  margin-top: 15px;
+  font-family: "VelaSans";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.24px;
+  color: rgba(134, 145, 156, 1);
+}
+
+.swiperSlide {
+  margin-right: 20px;
+}
+
+.botBlock {
+  margin-top: 70px;
+  font-family: "VelaSans";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.24px;
+  color: rgba(64, 72, 80, 1);
+}
+
+.tell {
+  margin-top: 30px;
+}
+
+.indicatorContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.indicatorLine {
+  position: relative;
+  max-width: 1560px;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(224, 228, 231, 1);
+  border-radius: 2px;
+}
+
+.indicatorSlider {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: rgba(253, 76, 56, 1);
+  border-radius: 2px;
+  transition: left 0.3s ease-out;
+}
+
+@media (max-width: 1260px) {
+  .rightBlock {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 950px) {
+  .background {
+    background-color: rgba(64, 72, 80, 1);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .section {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .invBlock {
+    display: block;
+    margin-top: 20px;
+    border-top: 2px solid rgba(85, 92, 99, 1);
+  }
+
+  .leftBlockInv {
+    border-right: 2px solid rgba(85, 92, 99, 1);
+    height: 35px;
+    width: 50%;
+  }
+
+  .smallTag {
+    font-family: "BebasNeue";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.4px;
+    color: rgba(153, 165, 177, 1);
+    display: flex;
+    justify-content: center;
+  }
+
+  .block {
+    max-width: 1520px;
+    width: 100%;
+    margin: 0 auto;
+    border-top: none;
+    display: block;
+    margin-top: 0px;
+  }
+
+  .leftBlock,
+  .rightBlock {
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 20px;
+  }
+
+  .leftBlock {
+    border-right: none;
+    font-family: "BebasNeue";
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    line-height: 44px;
+  }
+
+  .rightBlock {
+    padding-left: 0px;
+    font-family: "VelaSans";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .textRightBlock {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .prevButton {
+    display: none;
+    gap: 8px;
+  }
+
+  .triggerButton {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1520px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .allBut,
+  .contBut,
+  .seoBut {
+    text-align: center;
+    width: 100%;
+    font-family: "BebasNeue";
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 60px;
+    letter-spacing: -0.3px;
+    color: rgba(130, 142, 153, 1);
+    border-bottom: 3px solid rgba(130, 142, 153, 1);
+  }
+
+  .active {
+    border-bottom: 3px solid rgba(253, 76, 56, 1);
+    color: rgba(253, 76, 56, 1);
+  }
+
+  .swiper {
+    margin-top: 30px;
+    max-width: 1560px;
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .indicatorLine {
+    display: block;
+  }
+
+  .indicatorSlider {
+    position: absolute;
+    max-width: 10%;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(253, 76, 56, 1);
+    border-radius: 2px;
+    transition: left 0.3s ease-out;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 1452px;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 100%;
+  position: relative;
+  color: #000;
+  z-index: 1001;
+}
+
+.closeButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.magazine {
+  padding: 2px 10px 2px 10px;
+  background: rgba(253, 76, 56, 1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 1);
+  font-family: "VelaSans", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.18px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tagModal {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(64, 68, 72, 1);
+  margin-top: 0px;
+  margin-bottom: 10px;
+  max-width: 279px;
+  width: 100%;
+}
+
+.firstTag {
+  margin-top: 20px !important;
+}
+
+.modalFirstSection {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid rgba(223, 222, 222, 1);
+}
+
+.leftModalFirstSection {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  max-width: 279px;
+  width: 100%;
+}
+
+.rightBlockFirst {
+  font-family: "VelaSans", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.4px;
+  color: rgba(134, 145, 156, 1);
+  margin-left: 0px;
+}
+
+.client {
+  margin-left: 140px !important;
+  margin-bottom: 30px;
+  padding-right: 40px;
+  box-sizing: border-box;
+  margin-top: 0px;
+  max-width: 650px !important;
+  width: 100% !important;
+  font-family: "VelaSans" !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.4px !important;
+}
+
+.secondModal {
+  margin-top: 30px;
+}
+
+.rightModalFirstSection {
+  margin-left: 141px;
+}
+
+.stepItem {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.stepLeft {
+  max-width: 303px;
+  width: 100%;
+}
+
+.resultNumber,
+.stepNumber {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.4px;
+  color: rgba(253, 76, 56, 1);
+  margin: 0;
+}
+
+.resultTitle,
+.stepTitle {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: rgba(64, 68, 72, 1);
+  max-width: 323px;
+  width: 100%;
+}
+
+.stepDescription {
+  font-family: "VelaSans" !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.4px !important;
+  max-width: 511px !important;
+  width: 100% !important;
+  color: rgba(134, 145, 156, 1) !important;
+  margin-left: 60px !important;
+}
+
+.modalResultsSection {
+  margin-top: 40px;
+  display: flex;
+}
+
+.modalResultsSection .tagModal {
+  max-width: 242px;
+  width: 100%;
+}
+
+.resultBlock {
+  display: block;
+  max-width: 890px;
+  width: 100%;
+  margin-left: 180px;
+}
+
+.firstResultBlock {
+  display: flex;
+}
+
+.secondResultBlock {
+  display: flex;
+}
+
+.seoImagesWrap {
+  margin-top: 26px;
+  width: 100%;
+}
+
+.seoImagesGrid {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.seoImageItem {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(242, 242, 242, 1);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.seoImage {
+  object-fit: cover;
+}
+
+.seoImageHint {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 1);
+  font-family: "VelaSans";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  z-index: 2;
+}
+
+.imageViewerOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.imageViewerContent {
+  position: relative;
+  width: min(1200px, 100%);
+  max-height: 90vh;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.imageViewerClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.imageViewerImg {
+  position: relative;
+  width: 100%;
+  height: min(78vh, 800px);
+  background: rgba(242, 242, 242, 1);
+}
+
+.imageViewerImgInner {
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .seoImageItem {
+    aspect-ratio: 16 / 11;
+    border-radius: 12px;
+  }
+
+  .seoImageHint {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 5px 8px;
+    border-radius: 8px;
+  }
+
+  .imageViewerContent {
+    width: 100%;
+    max-height: 92vh;
+  }
+
+  .imageViewerImg {
+    height: 75vh;
+  }
+}
+
+@media (min-width: 951px) {
+  .readButton {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    gap: 0;
+    transition:
+      filter 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .readButton:hover {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    filter: brightness(1.05);
+  }
+
+  .textRB,
+  .imgRB {
+    display: none;
+  }
+}
+
+.readButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.textRB,
+.imgRB {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.imgRB img {
+  display: block;
+  position: static;
+}
+
+@media (max-width: 950px) {
+  .readButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 69px;
+  }
+}
+
+@media (max-width: 950px) {
+  .swiper :global(.swiper-wrapper) {
+    align-items: stretch;
+  }
+
+  .section {
+    max-width: 375px;
+    overflow: hidden;
+  }
+
+  .block {
+    margin-top: 0;
+  }
+
+  .leftBlock {
+    padding-top: 40px;
+    font-size: 50px;
+    line-height: 44px;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+
+  .rightBlock {
+    padding-top: 20px;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .textRightBlock {
+    max-width: 100%;
+  }
+
+  .triggerButton {
+    margin-top: 30px;
+  }
+
+  .allBut,
+  .contBut,
+  .seoBut {
+    font-size: 30px;
+    line-height: 60px;
+    letter-spacing: -0.01em;
+  }
+
+  .swiper {
+    margin-top: 30px;
+    overflow: hidden;
+  }
+
+  .swiperSlide,
+  .swiperSlideContent {
+    width: 345px !important;
+    max-width: 345px;
+    margin-right: 12px;
+    height: auto !important;
+    display: flex;
+  }
+
+  .card {
+    width: 345px;
+    min-height: 645px;
+    height: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    flex: 1 1 auto;
+  }
+
+  .topBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .upBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+  }
+
+  .upper {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .upper img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .market {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .lower {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .result {
+    width: 100%;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+  }
+
+  .summary {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .botBlock {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .story,
+  .tell {
+    margin-top: 0;
+  }
+
+  .readButton {
+    width: 100%;
+    max-width: 305px;
+    min-width: 305px;
+    height: 70px;
+    min-height: 70px;
+    margin: 0 auto;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .imgRB img {
+    width: 30px;
+    height: 15px;
+    transform: translateY(-1px);
+  }
+
+  .indicatorContainer {
+    margin-top: 28px;
+  }
+
+  .indicatorLine {
+    max-width: 345px;
+  }
+}
+
+@media (max-width: 760px) {
+  .modalOverlay {
+    align-items: flex-start;
+    padding: 20px 15px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .modalContent {
+    width: min(345px, 100%) !important;
+    max-width: 345px !important;
+    max-height: calc(100dvh - 40px);
+    margin: 0 auto;
+    padding: 12px 0 0;
+    border-radius: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+
+  .closeButton {
+    top: 10px;
+    right: 8px;
+    z-index: 3;
+  }
+
+  .closeButton img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .magazine {
+    margin: 0 36px 10px 8px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .tagModal,
+  .modalResultsSection .tagModal {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 8px 18px;
+    font-size: 24px !important;
+    line-height: 24px !important;
+    letter-spacing: -0.01em !important;
+    text-transform: uppercase;
+  }
+
+  .firstTag {
+    margin-top: 0 !important;
+  }
+
+  .modalFirstSection,
+  .secondModal,
+  .modalResultsSection {
+    display: block;
+    margin: 0;
+  }
+
+  .modalFirstSection {
+    padding: 0 0 24px;
+    border-bottom: 1px solid rgba(224, 228, 231, 1);
+  }
+
+  .secondModal {
+    padding-top: 24px;
+  }
+
+  .modalResultsSection {
+    padding-top: 24px;
+  }
+
+  .leftModalFirstSection,
+  .rightBlockFirst,
+  .rightModalFirstSection,
+  .resultBlock,
+  .stepLeft,
+  .resultLeft,
+  .secondResultLeft {
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .client {
+    margin-left: 0 !important;
+    margin-bottom: 0;
+    padding: 0 8px;
+    max-width: 100% !important;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .rightModalFirstSection,
+  .resultBlock {
+    margin-left: 0;
+  }
+
+  .firstResultBlock,
+  .secondResultBlock {
+    display: block;
+  }
+
+  .stepItem,
+  .resultItem,
+  .secondResultItem {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 18px 8px;
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(224, 228, 231, 1);
+    box-sizing: border-box;
+  }
+
+  .resultNumber,
+  .stepNumber {
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+
+  .resultTitle,
+  .stepTitle,
+  .secondResultTitle {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: 18px !important;
+    line-height: 20px !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .stepDescription,
+  .resultDescription,
+  .secondResultDescription {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 8px 0 0 !important;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    letter-spacing: -0.01em !important;
+    color: rgba(134, 145, 156, 1) !important;
+  }
+
+  .firstResultItem:first-of-type,
+  .firstResultItem:not(:first-of-type),
+  .secondResultItem,
+  .secondResultItem:not(:first-of-type) {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .margintResult,
+  .widthResult {
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 951px) {
+  .readButton {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    gap: 0;
+    transition:
+      filter 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .readButton:hover {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    filter: brightness(1.05);
+  }
+
+  .textRB,
+  .imgRB {
+    display: none;
+  }
+}

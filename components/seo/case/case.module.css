@@ -1,0 +1,2447 @@
+.background {
+  background-color: rgba(64, 72, 80, 1);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.section {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 951px) {
+  .readButton {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    gap: 0;
+    transition:
+      filter 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .readButton:hover {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    filter: brightness(1.05);
+  }
+
+  .textRB,
+  .imgRB {
+    display: none;
+  }
+}
+
+.topBar {
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 28px;
+  border-top: 2px solid rgba(116, 116, 116, 1);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.topCopy {
+  max-width: 920px;
+}
+
+.topLine {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+}
+
+.topLineAccent {
+  color: rgba(253, 76, 56, 1);
+}
+
+.topText {
+  max-width: 430px;
+  margin-top: 14px;
+  font-family: "VelaSans";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.smallTag {
+  font-family: "BebasNeue";
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0.56px;
+  color: rgba(153, 165, 177, 1);
+  display: flex;
+  justify-content: center;
+}
+
+.block {
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 2px solid rgba(116, 116, 116, 1);
+  display: flex;
+  margin-top: 40px;
+}
+
+.leftBlock,
+.rightBlock {
+  width: 50%;
+  box-sizing: border-box;
+  padding-top: 40px;
+}
+
+.leftBlock {
+  border-right: 2px solid rgba(116, 116, 116, 1);
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 100px;
+  letter-spacing: -2px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 100px;
+}
+
+.rightBlock {
+  padding-left: 40px;
+  font-family: "VelaSans";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.24px;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: space-between;
+}
+
+.textRightBlock {
+  max-width: 400px;
+  width: 100%;
+}
+
+.prevButton {
+  display: flex;
+  gap: 8px;
+}
+
+.navButtonWrapper {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.navButton {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.2s ease;
+}
+
+.navButtonHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.navButtonWrapper:hover .navButton {
+  opacity: 0;
+}
+
+.navButtonWrapper:hover .navButtonHover {
+  opacity: 1;
+}
+
+.triggerButton {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 65px;
+}
+
+.indicatorLine {
+  display: none;
+}
+
+.allBut,
+.contBut,
+.seoBut {
+  text-align: center;
+  width: 100%;
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 85px;
+  letter-spacing: -1.1px;
+  color: rgba(130, 142, 153, 1);
+  border-bottom: 3px solid rgba(130, 142, 153, 1);
+}
+
+.allBut:hover,
+.contBut:hover,
+.seoBut:hover {
+  color: rgba(253, 76, 56, 1);
+  border-bottom: 3px solid rgba(253, 76, 56, 1);
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 3px solid rgba(253, 76, 56, 1);
+  color: rgba(253, 76, 56, 1);
+}
+
+.swiper {
+  margin-top: 28px;
+  max-width: 1560px;
+  width: 100%;
+  margin-left: 0;
+}
+
+.card {
+  width: 566px;
+  height: 830px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 12px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.readButton {
+  width: 506px;
+  height: 90px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(253, 76, 56, 1);
+  border-radius: 12px;
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: -0.56px;
+  color: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  gap: 5px;
+}
+
+.readButton:hover {
+  cursor: pointer;
+  background: #ff614f;
+}
+
+.market {
+  background: rgba(242, 242, 242, 1);
+  border-radius: 8px;
+  padding: 4px 10px;
+  box-sizing: border-box;
+  width: fit-content;
+  height: fit-content;
+  font-family: "VelaSans";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.18px;
+  color: rgba(112, 128, 144, 1);
+}
+
+.upper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lower {
+  margin-top: 30px;
+}
+
+.result {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: -0.6px;
+  color: rgba(64, 68, 72, 1);
+}
+
+.summary {
+  margin-top: 15px;
+  font-family: "VelaSans";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.24px;
+  color: rgba(134, 145, 156, 1);
+}
+
+.swiperSlide {
+  margin-right: 20px;
+}
+
+.botBlock {
+  margin-top: 70px;
+  font-family: "VelaSans";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.24px;
+  color: rgba(64, 72, 80, 1);
+}
+
+.tell {
+  margin-top: 30px;
+}
+
+/* Индикатор-ползунок */
+.indicatorContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.indicatorLine {
+  position: relative;
+  max-width: 1560px;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(224, 228, 231, 1);
+  border-radius: 2px;
+}
+
+.indicatorSlider {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: rgba(253, 76, 56, 1);
+  border-radius: 2px;
+  transition: left 0.3s ease-out;
+}
+
+@media (max-width: 1260px) {
+  .rightBlock {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 951px) {
+  .smallTag,
+  .invBlock,
+  .block {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  .topBar {
+    display: none;
+  }
+
+  .background {
+    background-color: rgba(64, 72, 80, 1);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .section {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .invBlock {
+    display: block;
+    margin-top: 20px;
+    border-top: 2px solid rgba(85, 92, 99, 1);
+  }
+
+  .leftBlockInv {
+    border-right: 2px solid rgba(85, 92, 99, 1);
+    height: 35px;
+    width: 50%;
+  }
+
+  .smallTag {
+    font-family: "BebasNeue";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.4px;
+    color: rgba(153, 165, 177, 1);
+    display: flex;
+    justify-content: center;
+  }
+
+  .block {
+    max-width: 1520px;
+    width: 100%;
+    margin: 0 auto;
+    border-top: none;
+    display: block;
+    margin-top: 0px;
+  }
+
+  .leftBlock,
+  .rightBlock {
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 20px;
+  }
+
+  .leftBlock {
+    border-right: none;
+    font-family: "BebasNeue";
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    line-height: 44px;
+  }
+
+  .rightBlock {
+    padding-left: 0px;
+    font-family: "VelaSans";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .textRightBlock {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .prevButton {
+    display: none;
+    gap: 8px;
+  }
+
+  .navButtonWrapper {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+
+  .navButton {
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.2s ease;
+  }
+
+  .navButtonHover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .navButtonWrapper:hover .navButton {
+    opacity: 0;
+  }
+
+  .navButtonWrapper:hover .navButtonHover {
+    opacity: 1;
+  }
+
+  .triggerButton {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1520px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .allBut,
+  .contBut,
+  .seoBut {
+    text-align: center;
+    width: 100%;
+    font-family: "BebasNeue";
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 60px;
+    letter-spacing: -0.3px;
+    color: rgba(130, 142, 153, 1);
+    border-bottom: 3px solid rgba(130, 142, 153, 1);
+  }
+
+  .allBut:hover,
+  .contBut:hover,
+  .seoBut:hover {
+    color: rgba(253, 76, 56, 1);
+    border-bottom: 3px solid rgba(253, 76, 56, 1);
+    cursor: pointer;
+  }
+
+  .active {
+    border-bottom: 3px solid rgba(253, 76, 56, 1);
+    color: rgba(253, 76, 56, 1);
+  }
+
+  .swiper {
+    margin-top: 30px;
+    max-width: 1560px;
+    width: 100%;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .card {
+    width: 345px;
+    height: 645px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .readButton {
+    width: 305px;
+    padding-top: 24.5px;
+    padding-bottom: 24.5px;
+    text-align: center;
+    background: rgba(253, 76, 56, 1);
+    border-radius: 12px;
+    font-family: "BebasNeue";
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+  }
+
+  .market {
+    background: rgba(242, 242, 242, 1);
+    border-radius: 8px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    width: fit-content;
+    height: fit-content;
+    font-family: "VelaSans";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.14px;
+    color: rgba(112, 128, 144, 1);
+  }
+
+  .upper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .upper img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .lower {
+    margin-top: 40px;
+  }
+
+  .result {
+    font-family: "BebasNeue";
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+    width: 305px;
+    color: rgba(64, 68, 72, 1);
+  }
+
+  .summary {
+    margin-top: 15px;
+    font-family: "VelaSans";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+    color: rgba(134, 145, 156, 1);
+  }
+
+  .pc {
+    display: none;
+  }
+
+  .swiperSlide {
+    margin-right: 20px;
+  }
+
+  .botBlock {
+    margin-top: 20px;
+    font-family: "VelaSans";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+    max-width: 305px;
+    width: 100%;
+  }
+
+  .tell {
+    margin-top: 20px;
+  }
+
+  .indicatorContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .indicatorLine {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(224, 228, 231, 1);
+    border-radius: 2px;
+  }
+
+  .indicatorLine {
+    display: block;
+  }
+
+  .indicatorSlider {
+    position: absolute;
+    max-width: 10%;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(253, 76, 56, 1);
+    border-radius: 2px;
+    transition: left 0.3s ease-out;
+  }
+}
+
+/* === МОДАЛЬНОЕ ОКНО === */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 1452px;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 100%;
+  position: relative;
+  color: #000;
+  z-index: 1001;
+}
+
+.closeButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Заголовок и цель клиента */
+.magazine {
+  padding: 2px 10px 2px 10px;
+  background: rgba(253, 76, 56, 1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 1);
+  font-family: "VelaSans", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.18px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tagModal {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(64, 68, 72, 1);
+  margin-top: 0px;
+  margin-bottom: 10px;
+  max-width: 279px;
+  width: 100%;
+}
+
+.firstTag {
+  margin-top: 20px !important;
+}
+
+.modalFirstSection {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid rgba(223, 222, 222, 1);
+}
+
+.leftModalFirstSection {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  max-width: 279px;
+  width: 100%;
+}
+
+.rightBlockFirst {
+  font-family: "VelaSans", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.4px;
+  color: rgba(134, 145, 156, 1);
+  margin-left: 0px;
+}
+
+.client {
+  margin-left: 140px !important;
+  margin-bottom: 30px;
+  padding-right: 40px;
+  box-sizing: border-box;
+  margin-top: 0px;
+  font-weight: 400 !important;
+  max-width: 650px !important;
+  width: 100% !important;
+  font-family: "VelaSans" !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.4px !important;
+}
+
+/* Что мы сделали */
+.secondModal {
+  margin-top: 30px;
+}
+
+.rightModalFirstSection {
+  margin-left: 141px;
+}
+
+.stepItem {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.stepLeft {
+  max-width: 303px;
+  width: 100%;
+}
+
+.resultNumber,
+.stepNumber {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.4px;
+  color: rgba(253, 76, 56, 1);
+  margin: 0;
+}
+
+.resultTitle,
+.stepTitle {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: rgba(64, 68, 72, 1);
+  max-width: 323px;
+  width: 100%;
+}
+
+.stepDescription {
+  font-family: "VelaSans" !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.4px !important;
+  max-width: 511px !important;
+  width: 100% !important;
+  color: rgba(134, 145, 156, 1) !important;
+  margin-left: 60px !important;
+}
+
+/* Результаты */
+.modalResultsSection {
+  margin-top: 40px;
+  display: flex;
+}
+
+.modalResultsSection .tagModal {
+  max-width: 242px;
+  width: 100%;
+}
+
+.resultBlock {
+  display: block;
+  max-width: 890px;
+  width: 100%;
+  margin-left: 180px;
+}
+
+.firstResultBlock {
+  display: flex;
+}
+
+.secondResultBlock {
+  display: flex;
+}
+
+.resultItem {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.firstResultItem:first-of-type {
+  max-width: 323px;
+  width: 100%;
+}
+
+.firstResultItem:not(:first-of-type) {
+  max-width: 346px !important;
+  width: 100% !important;
+  margin-left: 40px;
+}
+
+.secondResultItem {
+  display: block;
+}
+
+.secondResultItem:first-of-type {
+  max-width: 323px;
+  width: 100%;
+}
+
+.secondResultItem:not(:first-of-type) {
+  margin-left: 40px;
+}
+
+.resultLeft {
+  max-width: 303px;
+  width: 100%;
+}
+
+.margintResult {
+  margin-top: 0px !important;
+}
+
+.resultDescription {
+  font-family: "VelaSans" !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.4px !important;
+  color: rgba(134, 145, 156, 1) !important;
+  margin-left: 0px !important;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.secondResultDescription {
+  font-family: "VelaSans";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.4px;
+  color: rgba(134, 145, 156, 1);
+  margin-top: 20px;
+  width: 100%;
+}
+
+.secondResultDescription:not(:first-of-type) {
+  max-width: 521px !important;
+  width: 100% !important;
+}
+
+.secondResultTitle {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0;
+  margin: 0;
+  color: rgba(64, 68, 72, 1);
+}
+
+/* === МОБИЛЬНАЯ ВЕРСИЯ МОДАЛЬНОГО ОКНА === */
+@media (max-width: 760px) {
+  .modalOverlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .modalContent {
+    max-width: 375px !important;
+    width: 100% !important;
+    padding: 15px;
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow-y: auto;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.16px;
+    box-sizing: border-box;
+  }
+
+  .closeButton {
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+  }
+
+  /* Заголовок модалки */
+  .tagModal {
+    font-family: "BebasNeue", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: rgba(64, 68, 72, 1);
+    margin-top: 0;
+    margin-bottom: 15px;
+    max-width: 100%;
+    text-transform: uppercase;
+  }
+
+  .magazine {
+    padding: 2px 8px;
+    background: rgba(253, 76, 56, 1);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 1);
+    font-family: "VelaSans", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+    white-space: nowrap;
+    width: fit-content;
+  }
+
+  /* Что мы сделали — секция */
+  .modalFirstSection {
+    display: block;
+    border-bottom: none;
+    margin-bottom: 20px;
+  }
+
+  .leftModalFirstSection {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .rightBlockFirst {
+    font-family: "VelaSans", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    letter-spacing: -0.16px;
+    color: rgba(134, 145, 156, 1);
+    margin-left: 0;
+  }
+
+  .client {
+    margin-left: 0 !important;
+    margin-bottom: 15px;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    letter-spacing: -0.16px !important;
+    padding-right: 11px;
+  }
+
+  .firstResultItem:not(:first-of-type) {
+    margin-left: 0px;
+  }
+
+  .firstResultItem:first-of-type {
+    width: 90% !important;
+  }
+
+  .firstResultItem:not(:first-of-type) {
+    width: 90% !important;
+  }
+  /* Шаги */
+  .stepItem {
+    display: block;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(248, 248, 248, 1);
+    border-radius: 8px;
+  }
+
+  .stepLeft {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .resultNumber,
+  .stepNumber {
+    font-family: "BebasNeue";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -0.36px;
+    color: rgba(253, 76, 56, 1);
+    margin: 0;
+  }
+
+  .resultTitle,
+  .stepTitle {
+    font-family: "BebasNeue";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0;
+    margin-top: 8px;
+    margin-bottom: 0;
+    color: rgba(64, 68, 72, 1);
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .stepDescription {
+    font-family: "VelaSans" !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    line-height: 20px !important;
+    letter-spacing: -0.16px !important;
+    color: rgba(134, 145, 156, 1) !important;
+    margin-left: 0 !important;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  /* Результаты */
+  .modalResultsSection {
+    margin-top: 30px;
+    display: block;
+  }
+
+  .imgRB img {
+    width: 27px;
+    height: 15px;
+    position: relative;
+    top: 1px;
+  }
+
+  .modalResultsSection .tagModal {
+    max-width: 100%;
+    width: 100%;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .resultBlock {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .firstResultBlock,
+  .secondResultBlock {
+    display: block;
+  }
+
+  .resultItem {
+    display: block;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(248, 248, 248, 1);
+    border-radius: 8px;
+  }
+
+  .resultLeft {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .margintResult {
+    margin-top: 0 !important;
+  }
+
+  .resultDescription {
+    font-family: "VelaSans" !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    letter-spacing: -0.16px !important;
+    color: rgba(134, 145, 156, 1) !important;
+    margin-left: 0 !important;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  /* Цифры результатов */
+  .resultNumber {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(253, 76, 56, 1);
+    margin: 0;
+  }
+
+  .resultTitle {
+    font-size: 40px;
+    font-weight: 700;
+    color: rgba(64, 68, 72, 1);
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  .rightModalFirstSection {
+    margin-left: 0px;
+  }
+
+  /* Для раздела "РЕЗУЛЬТАТЫ ЗА 4 МЕСЯЦА" — можно добавить отдельный класс, если нужно */
+  .resultsHeader {
+    font-family: "BebasNeue", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: rgba(64, 68, 72, 1);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  /* Если в данных есть "resultsTitle", можно использовать его как заголовок */
+  .modalResultsSection .tagModal {
+    text-transform: uppercase;
+  }
+
+  .secondResultItem {
+    display: block;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(248, 248, 248, 1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .secondResultItem:not(:first-of-type) {
+    margin-left: 0px;
+  }
+
+  .secondResultTitle {
+    font-size: 40px;
+  }
+
+  .resultTitle {
+    font-size: 40px !important;
+  }
+  .secondResultItem {
+    width: 90% !important;
+  }
+
+  .tagModal {
+    font-size: 50px !important;
+    letter-spacing: 0px !important;
+    line-height: 100% !important;
+  }
+}
+
+.seoImagesWrap {
+  margin-top: 26px;
+  width: 100%;
+}
+
+.seoImagesGrid {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.seoImageItem {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(242, 242, 242, 1);
+}
+
+.seoImage {
+  object-fit: cover;
+}
+
+.background {
+  background-color: rgba(64, 72, 80, 1);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.section {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.smallTag {
+  font-family: "BebasNeue";
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0.56px;
+  color: rgba(153, 165, 177, 1);
+  display: flex;
+  justify-content: center;
+}
+
+.block {
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 2px solid rgba(116, 116, 116, 1);
+  display: flex;
+  margin-top: 40px;
+}
+
+.leftBlock,
+.rightBlock {
+  width: 50%;
+  box-sizing: border-box;
+  padding-top: 40px;
+}
+
+.leftBlock {
+  border-right: 2px solid rgba(116, 116, 116, 1);
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 100px;
+  letter-spacing: -2px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 100px;
+}
+
+.rightBlock {
+  padding-left: 40px;
+  font-family: "VelaSans";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.24px;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: space-between;
+}
+
+.textRightBlock {
+  max-width: 400px;
+  width: 100%;
+}
+
+.prevButton {
+  display: flex;
+  gap: 8px;
+}
+
+.navButtonWrapper {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.navButton {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.2s ease;
+}
+
+.navButtonHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.navButtonWrapper:hover .navButton {
+  opacity: 0;
+}
+
+.navButtonWrapper:hover .navButtonHover {
+  opacity: 1;
+}
+
+.triggerButton {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 65px;
+}
+
+.indicatorLine {
+  display: none;
+}
+
+.allBut,
+.contBut,
+.seoBut {
+  text-align: center;
+  width: 100%;
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 85px;
+  letter-spacing: -1.1px;
+  color: rgba(130, 142, 153, 1);
+  border-bottom: 3px solid rgba(130, 142, 153, 1);
+}
+
+.allBut:hover,
+.contBut:hover,
+.seoBut:hover {
+  color: rgba(253, 76, 56, 1);
+  border-bottom: 3px solid rgba(253, 76, 56, 1);
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 3px solid rgba(253, 76, 56, 1);
+  color: rgba(253, 76, 56, 1);
+}
+
+.swiper {
+  margin-top: 60px;
+  max-width: 1560px;
+  width: 100%;
+  margin-left: 30px;
+}
+
+.card {
+  width: 566px;
+  height: 830px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 12px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.readButton {
+  width: 506px;
+  height: 90px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(253, 76, 56, 1);
+  border-radius: 12px;
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: -0.56px;
+  color: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  gap: 5px;
+}
+
+.readButton:hover {
+  cursor: pointer;
+  background: #ff614f;
+}
+
+.market {
+  background: rgba(242, 242, 242, 1);
+  border-radius: 8px;
+  padding: 4px 10px;
+  box-sizing: border-box;
+  width: fit-content;
+  height: fit-content;
+  font-family: "VelaSans";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.18px;
+  color: rgba(112, 128, 144, 1);
+}
+
+.upper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lower {
+  margin-top: 30px;
+}
+
+.result {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: -0.6px;
+  color: rgba(64, 68, 72, 1);
+}
+
+.summary {
+  margin-top: 15px;
+  font-family: "VelaSans";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.24px;
+  color: rgba(134, 145, 156, 1);
+}
+
+.swiperSlide {
+  margin-right: 20px;
+}
+
+.botBlock {
+  margin-top: 70px;
+  font-family: "VelaSans";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.24px;
+  color: rgba(64, 72, 80, 1);
+}
+
+.tell {
+  margin-top: 30px;
+}
+
+.indicatorContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.indicatorLine {
+  position: relative;
+  max-width: 1560px;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(224, 228, 231, 1);
+  border-radius: 2px;
+}
+
+.indicatorSlider {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: rgba(253, 76, 56, 1);
+  border-radius: 2px;
+  transition: left 0.3s ease-out;
+}
+
+@media (max-width: 1260px) {
+  .rightBlock {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 950px) {
+  .background {
+    background-color: rgba(64, 72, 80, 1);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .section {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .invBlock {
+    display: block;
+    margin-top: 20px;
+    border-top: 2px solid rgba(85, 92, 99, 1);
+  }
+
+  .leftBlockInv {
+    border-right: 2px solid rgba(85, 92, 99, 1);
+    height: 35px;
+    width: 50%;
+  }
+
+  .smallTag {
+    font-family: "BebasNeue";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.4px;
+    color: rgba(153, 165, 177, 1);
+    display: flex;
+    justify-content: center;
+  }
+
+  .block {
+    max-width: 1520px;
+    width: 100%;
+    margin: 0 auto;
+    border-top: none;
+    display: block;
+    margin-top: 0px;
+  }
+
+  .leftBlock,
+  .rightBlock {
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 20px;
+  }
+
+  .leftBlock {
+    border-right: none;
+    font-family: "BebasNeue";
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    line-height: 44px;
+  }
+
+  .rightBlock {
+    padding-left: 0px;
+    font-family: "VelaSans";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .textRightBlock {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .prevButton {
+    display: none;
+    gap: 8px;
+  }
+
+  .triggerButton {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1520px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .allBut,
+  .contBut,
+  .seoBut {
+    text-align: center;
+    width: 100%;
+    font-family: "BebasNeue";
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 60px;
+    letter-spacing: -0.3px;
+    color: rgba(130, 142, 153, 1);
+    border-bottom: 3px solid rgba(130, 142, 153, 1);
+  }
+
+  .active {
+    border-bottom: 3px solid rgba(253, 76, 56, 1);
+    color: rgba(253, 76, 56, 1);
+  }
+
+  .swiper {
+    margin-top: 30px;
+    max-width: 1560px;
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .indicatorLine {
+    display: block;
+  }
+
+  .indicatorSlider {
+    position: absolute;
+    max-width: 10%;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(253, 76, 56, 1);
+    border-radius: 2px;
+    transition: left 0.3s ease-out;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 1452px;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 100%;
+  position: relative;
+  color: #000;
+  z-index: 1001;
+}
+
+.closeButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.magazine {
+  padding: 2px 10px 2px 10px;
+  background: rgba(253, 76, 56, 1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 1);
+  font-family: "VelaSans", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.18px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tagModal {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(64, 68, 72, 1);
+  margin-top: 0px;
+  margin-bottom: 10px;
+  max-width: 279px;
+  width: 100%;
+}
+
+.firstTag {
+  margin-top: 20px !important;
+}
+
+.modalFirstSection {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid rgba(223, 222, 222, 1);
+}
+
+.leftModalFirstSection {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  max-width: 279px;
+  width: 100%;
+}
+
+.rightBlockFirst {
+  font-family: "VelaSans", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.4px;
+  color: rgba(134, 145, 156, 1);
+  margin-left: 0px;
+}
+
+.client {
+  margin-left: 140px !important;
+  margin-bottom: 30px;
+  padding-right: 40px;
+  box-sizing: border-box;
+  margin-top: 0px;
+  max-width: 650px !important;
+  width: 100% !important;
+  font-family: "VelaSans" !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.4px !important;
+}
+
+.secondModal {
+  margin-top: 30px;
+}
+
+.rightModalFirstSection {
+  margin-left: 141px;
+}
+
+.stepItem {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.stepLeft {
+  max-width: 303px;
+  width: 100%;
+}
+
+.resultNumber,
+.stepNumber {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.4px;
+  color: rgba(253, 76, 56, 1);
+  margin: 0;
+}
+
+.resultTitle,
+.stepTitle {
+  font-family: "BebasNeue";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: rgba(64, 68, 72, 1);
+  max-width: 323px;
+  width: 100%;
+}
+
+.stepDescription {
+  font-family: "VelaSans" !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.4px !important;
+  max-width: 511px !important;
+  width: 100% !important;
+  color: rgba(134, 145, 156, 1) !important;
+  margin-left: 60px !important;
+}
+
+.modalResultsSection {
+  margin-top: 40px;
+  display: flex;
+}
+
+.modalResultsSection .tagModal {
+  max-width: 242px;
+  width: 100%;
+}
+
+.resultBlock {
+  display: block;
+  max-width: 890px;
+  width: 100%;
+  margin-left: 180px;
+}
+
+.firstResultBlock {
+  display: flex;
+}
+
+.secondResultBlock {
+  display: flex;
+}
+
+.seoImagesWrap {
+  margin-top: 26px;
+  width: 100%;
+}
+
+.seoImagesGrid {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.seoImageItem {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(242, 242, 242, 1);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.seoImage {
+  object-fit: cover;
+}
+
+.seoImageHint {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 1);
+  font-family: "VelaSans";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  z-index: 2;
+}
+
+.imageViewerOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.imageViewerContent {
+  position: relative;
+  width: min(1200px, 100%);
+  max-height: 90vh;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.imageViewerClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.imageViewerImg {
+  position: relative;
+  width: 100%;
+  height: min(78vh, 800px);
+  background: rgba(242, 242, 242, 1);
+}
+
+.imageViewerImgInner {
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .seoImageItem {
+    aspect-ratio: 16 / 11;
+    border-radius: 12px;
+  }
+
+  .seoImageHint {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 5px 8px;
+    border-radius: 8px;
+  }
+
+  .imageViewerContent {
+    width: 100%;
+    max-height: 92vh;
+  }
+
+  .imageViewerImg {
+    height: 75vh;
+  }
+}
+
+.readButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.textRB,
+.imgRB {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.imgRB img {
+  display: block;
+  position: static;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 950px) {
+  .swiper :global(.swiper-wrapper) {
+    align-items: stretch;
+  }
+
+  .swiperSlide {
+    height: auto !important;
+    display: flex;
+  }
+
+  .card {
+    min-height: 645px;
+    height: 100%;
+    flex: 1 1 auto;
+  }
+
+  .topBlock {
+    flex: 1 1 auto;
+  }
+
+  .readButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 69px;
+    min-width: 305px;
+    min-height: 70px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .modalOverlay {
+    align-items: flex-start;
+    padding: 20px 15px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .modalContent {
+    width: min(345px, 100%) !important;
+    max-width: 345px !important;
+    max-height: calc(100dvh - 40px);
+    margin: 0 auto;
+    padding: 12px 0 0;
+    border-radius: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+
+  .closeButton {
+    top: 10px;
+    right: 8px;
+    z-index: 3;
+  }
+
+  .closeButton img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .magazine {
+    margin: 0 36px 10px 8px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .tagModal,
+  .modalResultsSection .tagModal {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 8px 18px;
+    font-size: 24px !important;
+    line-height: 24px !important;
+    letter-spacing: -0.01em !important;
+    text-transform: uppercase;
+  }
+
+  .firstTag {
+    margin-top: 0 !important;
+  }
+
+  .modalFirstSection,
+  .secondModal,
+  .modalResultsSection {
+    display: block;
+    margin: 0;
+  }
+
+  .modalFirstSection {
+    padding: 0 0 24px;
+    border-bottom: 1px solid rgba(224, 228, 231, 1);
+  }
+
+  .secondModal {
+    padding-top: 24px;
+  }
+
+  .modalResultsSection {
+    padding-top: 24px;
+  }
+
+  .leftModalFirstSection,
+  .rightBlockFirst,
+  .rightModalFirstSection,
+  .resultBlock,
+  .stepLeft,
+  .resultLeft,
+  .secondResultLeft {
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .client {
+    margin-left: 0 !important;
+    margin-bottom: 0;
+    padding: 0 8px;
+    max-width: 100% !important;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .rightModalFirstSection,
+  .resultBlock {
+    margin-left: 0;
+  }
+
+  .firstResultBlock,
+  .secondResultBlock {
+    display: block;
+  }
+
+  .stepItem,
+  .resultItem,
+  .secondResultItem {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 18px 8px;
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(224, 228, 231, 1);
+    box-sizing: border-box;
+  }
+
+  .resultNumber,
+  .stepNumber {
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+
+  .resultTitle,
+  .stepTitle,
+  .secondResultTitle {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: 18px !important;
+    line-height: 20px !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .stepDescription,
+  .resultDescription,
+  .secondResultDescription {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 8px 0 0 !important;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    letter-spacing: -0.01em !important;
+    color: rgba(134, 145, 156, 1) !important;
+  }
+
+  .firstResultItem:first-of-type,
+  .firstResultItem:not(:first-of-type),
+  .secondResultItem,
+  .secondResultItem:not(:first-of-type) {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .margintResult,
+  .widthResult {
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 951px) {
+  .section {
+    overflow: hidden;
+  }
+
+  .topBar {
+    display: flex;
+    max-width: 1520px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 26px;
+    border-top: 2px solid rgba(116, 116, 116, 1);
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .topCopy {
+    max-width: 1186px;
+    width: 100%;
+  }
+
+  .topLine {
+    font-size: 100px;
+    line-height: 101px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .topText {
+    max-width: 586px;
+    margin-top: 18px;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .smallTag {
+    display: none !important;
+  }
+
+  .invBlock {
+    display: none !important;
+  }
+
+  .leftBlockInv {
+    display: none;
+  }
+
+  .rightBlockInv {
+    display: none;
+  }
+
+  .block {
+    display: none !important;
+  }
+
+  .navButtonWrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .navButtonWrapper img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .swiper {
+    margin-top: 48px;
+    margin-left: 0;
+    max-width: 100%;
+    width: 100%;
+    padding-left: 24px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 950px) {
+  .background {
+    padding: 40px 15px;
+  }
+
+  .section {
+    max-width: 345px;
+    overflow: hidden;
+  }
+
+  .topBar {
+    display: block;
+    max-width: 345px;
+    width: 100%;
+    margin: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .topCopy {
+    max-width: 345px;
+    width: 100%;
+  }
+
+  .topLine {
+    font-size: 50px;
+    line-height: 44px;
+    letter-spacing: -0.01em;
+  }
+
+  .topText {
+    max-width: 345px;
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .topBar .prevButton,
+  .smallTag,
+  .invBlock,
+  .leftBlockInv,
+  .rightBlockInv,
+  .block {
+    display: none !important;
+  }
+
+  .swiper {
+    width: 345px;
+    max-width: 345px;
+    margin-top: 40px;
+    margin-left: 0;
+    padding-left: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .swiper :global(.swiper-wrapper) {
+    align-items: stretch;
+  }
+
+  .swiperSlide,
+  .swiperSlideContent {
+    width: 345px !important;
+    max-width: 345px;
+    height: auto !important;
+    margin-right: 10px !important;
+    display: flex;
+  }
+
+  .card {
+    width: 345px;
+    max-width: 345px;
+    min-height: 645px;
+    height: 645px;
+    padding: 20px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    flex: 0 0 345px;
+    overflow: hidden;
+  }
+
+  .topBlock {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .upper img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .market {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .lower {
+    margin-top: 40px;
+  }
+
+  .result {
+    width: 305px;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+  }
+
+  .summary {
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .botBlock {
+    max-width: 305px;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .tell {
+    margin-top: 20px;
+  }
+
+  .readButton {
+    width: 305px;
+    min-width: 305px;
+    height: 70px;
+    min-height: 70px;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .imgRB img {
+    width: 30px;
+    height: 15px;
+    object-fit: contain;
+    transform: translateY(-1px);
+  }
+
+  .indicatorContainer {
+    width: 345px;
+    margin-top: 30px;
+  }
+
+  .indicatorLine {
+    width: 345px;
+    height: 2px;
+    border-radius: 0;
+    background: rgba(224, 228, 231, 1);
+  }
+
+  .indicatorSlider {
+    width: 33.3334%;
+    max-width: none;
+    height: 2px;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 951px) {
+  .readButton {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    gap: 0;
+    transition:
+      filter 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .readButton:hover {
+    background:
+      url("/img/redReadButton.svg") center / 506px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    filter: brightness(1.05);
+  }
+
+  .textRB,
+  .imgRB {
+    display: none;
+  }
+}

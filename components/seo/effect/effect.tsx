@@ -256,7 +256,7 @@ export default function Effect() {
                   "Отправка..."
                 ) : (
                   <>
-                    Оставить заявку [<span className="arrow">→</span>]
+                    Оставить заявку  <span className="arrow" aria-hidden="true"></span>
                   </>
                 )}
               </button>
@@ -357,7 +357,7 @@ export default function Effect() {
                 "Отправка..."
               ) : (
                 <>
-                  Оставить заявку [<span className="arrow">→</span>]
+                  Оставить заявку  <span className="arrow" aria-hidden="true"></span>
                 </>
               )}
             </button>

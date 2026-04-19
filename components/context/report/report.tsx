@@ -69,6 +69,14 @@ export default function Report() {
                 className={styles.button}
                 onClick={openModal}
               >
+                <img
+                  src="/img/contfob.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width={729}
+                  height={90}
+                  className={styles.desktopButtonGraphic}
+                />
                 Начать с бесплатного аудита{" "}
                 <Image
                   src="/img/cartArrow.png"

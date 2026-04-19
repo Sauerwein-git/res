@@ -39,7 +39,7 @@ export default function AuditButton({
         alt="arrow"
         width={arrowWidth}
         height={arrowHeight}
-        style={{ marginLeft: "5px", ...(arrowStyle ?? {}) }}
+        style={arrowStyle}
       />
     </button>
   );

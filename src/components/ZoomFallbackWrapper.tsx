@@ -1,4 +1,3 @@
-// src/components/ZoomFallbackWrapper.tsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -12,7 +11,6 @@ export default function ZoomFallbackWrapper({
   const [needsFallback, setNeedsFallback] = useState(false);
 
   useEffect(() => {
-    // Если zoom не поддерживается — включаем fallback
     setNeedsFallback(!supportsZoom());
   }, []);
 

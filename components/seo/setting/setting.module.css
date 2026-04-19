@@ -131,13 +131,15 @@
 .button {
   font-family: "BebasNeue";
   font-weight: 700;
-  font-size: 28px;
-  line-height: 100%;
-  letter-spacing: 0.56px;
-  color: rgba(255, 255, 255, 1);
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+  color: transparent;
   width: 459px;
   height: 90px;
-  background: rgba(253, 76, 56, 1);
+  background:
+    url("/img/ButtonFree.svg") center / 626px 90px no-repeat,
+    rgba(253, 76, 56, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,10 +147,14 @@
   border-radius: 12px;
   margin-top: 60px;
   border: none;
+  overflow: hidden;
 }
 
 .button:hover {
-  background: rgba(255, 97, 79, 1);
+  background:
+    url("/img/ButtonFree.svg") center / 626px 90px no-repeat,
+    rgba(253, 76, 56, 1);
+  filter: brightness(1.05);
   cursor: pointer;
 }
 
@@ -219,6 +225,11 @@
   }
 
   .button {
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 1);
+    background: rgba(253, 76, 56, 1);
     margin-bottom: 30px;
   }
   .blogMobile {

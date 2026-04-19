@@ -198,13 +198,13 @@ body {
   }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1600px) and (min-width: 951px) {
   html {
     zoom: 0.9;
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1500px) and (min-width: 951px) {
   html {
     zoom: 0.81;
   }
@@ -212,7 +212,7 @@ body {
 
 /* Fallback для браузеров без поддержки zoom (например, Firefox) */
 @supports not (zoom: 0.9) {
-  @media (max-width: 1600px) {
+  @media (max-width: 1600px) and (min-width: 951px) {
     .zoom-fallback-wrapper {
       transform: scale(0.9);
       transform-origin: top left;
@@ -226,7 +226,7 @@ body {
     }
   }
 
-  @media (max-width: 1500px) {
+  @media (max-width: 1500px) and (min-width: 951px) {
     .zoom-fallback-wrapper {
       transform: scale(0.81);
       transform-origin: top left;

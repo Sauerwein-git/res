@@ -544,20 +544,74 @@
   background: rgba(253, 76, 56, 1);
   border-radius: 12px;
   display: flex;
-  text-align: center;
   align-items: center;
   justify-content: center;
-  font-family: "BebasNeue";
+  text-align: center;
+  font-family: "Bebas Neue", "BebasNeue", sans-serif;
   font-size: 28px;
-  line-height: 100%;
-  letter-spacing: -0.56px;
+  line-height: 1;
+  letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 1);
-  display: flex;
   gap: 5px;
   margin-top: 30px;
   border: none;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  padding: 0 24px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  will-change: transform, box-shadow;
+  white-space: nowrap;
+}
+
+.anchorBut:not(.anchorButDisabled):hover {
+  background: rgba(255, 97, 79, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.anchorBut :global(.arrow) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  min-width: 30px;
+  height: 15px;
+  line-height: 1;
+  color: transparent;
+  font-size: 0;
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+  background-image: url("/img/cartArrow.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.anchorBut:not(.anchorButDisabled):hover :global(.arrow) {
+  transform: translate(2px, -2px);
+}
+
+.anchorBut:not(.anchorButDisabled):active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+}
+
+.anchorButDisabled {
+  box-shadow: none;
+  opacity: 1;
+  background: rgba(253, 76, 56, 1);
+  cursor: default;
+}
+
+.anchorButDisabled:hover {
+  background: rgba(253, 76, 56, 1);
+  transform: none;
+  box-shadow: none;
 }
 
 @media (max-width: 950px) {
@@ -587,9 +641,62 @@
   .anchorBut {
     width: 100%;
     max-width: 100%;
-    min-height: 50px;
+    height: 70px;
+    min-height: 70px;
     font-size: 20px;
-    letter-spacing: -0.4px;
+    letter-spacing: 0.02em;
     margin-top: 20px;
+    padding: 0 20px;
+    gap: 4px;
+  }
+
+  .anchorBut :global(.arrow) {
+    width: 30px;
+    min-width: 30px;
+    height: 15px;
+    transform: translateY(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anchorBut,
+  .anchorBut :global(.arrow) {
+    transition: none;
+  }
+}
+
+@media (min-width: 951px) {
+  .anchorBut {
+    width: 460px;
+    height: 90px;
+    min-height: 90px;
+    background:
+      url("/img/ostZayav.svg") center / 461px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    color: transparent;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .anchorBut :global(.arrow) {
+    display: none;
+  }
+
+  .anchorBut:not(.anchorButDisabled):hover {
+    background:
+      url("/img/ostZayav.svg") center / 461px 90px no-repeat,
+      rgba(253, 76, 56, 1);
+    filter: brightness(1.05);
+  }
+
+  .anchorButDisabled,
+  .anchorButDisabled:hover {
+    background:
+      url("/img/ostZayav.svg") center / 461px 90px no-repeat,
+      rgba(253, 76, 56, 1);
   }
 }

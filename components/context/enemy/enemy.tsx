@@ -63,6 +63,14 @@ export default function Enemy() {
             </div>
           </div>
           <button type="button" className={styles.button} onClick={openModal}>
+            <img
+              src="/img/contfivb.svg"
+              alt=""
+              aria-hidden="true"
+              width={1520}
+              height={90}
+              className={styles.desktopButtonGraphic}
+            />
             Начать с бесплатного аудита{" "}
             <Image
               src="/img/cartArrow.png"
