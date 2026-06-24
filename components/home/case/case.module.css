@@ -150,7 +150,7 @@
 
 .card {
   width: 566px;
-  height: 830px;
+  height: 770px;
   background: rgba(255, 255, 255, 1);
   border-radius: 12px;
   padding: 30px;
@@ -211,7 +211,7 @@
 .result {
   font-family: "BebasNeue";
   font-weight: 700;
-  font-size: 60px;
+  font-size: 52px;
   line-height: 60px;
   letter-spacing: -0.6px;
   color: rgba(64, 68, 72, 1);
@@ -221,7 +221,7 @@
   margin-top: 15px;
   font-family: "VelaSans";
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 30px;
   letter-spacing: -0.24px;
   color: rgba(134, 145, 156, 1);
@@ -235,7 +235,7 @@
   margin-top: 70px;
   font-family: "VelaSans";
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 30px;
   letter-spacing: -0.24px;
   color: rgba(64, 72, 80, 1);
@@ -1302,7 +1302,7 @@
 
 .card {
   width: 566px;
-  height: 830px;
+  height: 770px;
   background: rgba(255, 255, 255, 1);
   border-radius: 12px;
   padding: 30px;
@@ -1363,7 +1363,7 @@
 .result {
   font-family: "BebasNeue";
   font-weight: 700;
-  font-size: 60px;
+  font-size: 52px;
   line-height: 60px;
   letter-spacing: -0.6px;
   color: rgba(64, 68, 72, 1);
@@ -1373,7 +1373,7 @@
   margin-top: 15px;
   font-family: "VelaSans";
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 30px;
   letter-spacing: -0.24px;
   color: rgba(134, 145, 156, 1);
@@ -1387,7 +1387,7 @@
   margin-top: 70px;
   font-family: "VelaSans";
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 30px;
   letter-spacing: -0.24px;
   color: rgba(64, 72, 80, 1);

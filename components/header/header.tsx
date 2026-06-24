@@ -231,9 +231,9 @@ const DynamicHeader = () => {
                     <div className={styles.numberLink}>Написать</div>
                     <a
                       className={styles.linkOfMeta}
-                      href="mailto:hi@research-it.ru"
+                      href="mailto:hello@research-it.ru"
                     >
-                      hi@research-it.ru
+                      hello@research-it.ru
                     </a>
                   </div>
                 </div>
@@ -356,9 +356,9 @@ const DynamicHeader = () => {
                   <div className={styles.numberLink}>Написать</div>
                   <a
                     className={styles.linkOfMeta}
-                    href="mailto:hi@research-it.ru"
+                    href="mailto:hello@research-it.ru"
                   >
-                    hi@research-it.ru
+                    hello@research-it.ru
                   </a>
                 </div>
 

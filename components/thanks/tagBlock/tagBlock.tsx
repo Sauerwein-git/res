@@ -47,7 +47,7 @@ export default function TagBlock() {
               </div>
               <div className={styles.blocks}>
                 <div className={styles.num}>Написать</div>
-                <div className={styles.fTag}>hi@research-it.ru</div>
+                <div className={styles.fTag}>hello@research-it.ru</div>
               </div>
             </div>
             <div className={styles.fright}>

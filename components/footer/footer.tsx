@@ -328,8 +328,8 @@ export default function Footer() {
                 <div className={styles.tagPlaceHolder}>
                   <div className={styles.placeText}>Написать</div>
                   <div className={styles.placeAnswer}>
-                    <Link href="mailto:hi@research-it.ru">
-                      hi@research-it.ru
+                    <Link href="mailto:hello@research-it.ru">
+                      hello@research-it.ru
                     </Link>
                   </div>
                 </div>

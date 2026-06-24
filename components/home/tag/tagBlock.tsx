@@ -47,8 +47,10 @@ export default function TagBlock() {
 
     let raf = 0;
     let m: Measured | null = null;
+    let animatedLogo: HTMLDivElement | null = null;
 
     const resetLogo = () => {
+      logo.style.visibility = "";
       logo.style.position = "";
       logo.style.left = "";
       logo.style.top = "";
@@ -61,25 +63,49 @@ export default function TagBlock() {
       logo.style.transform = "";
     };
 
+    const removeAnimatedLogo = () => {
+      if (!animatedLogo) return;
+      animatedLogo.remove();
+      animatedLogo = null;
+    };
+
+    const getAnimatedLogo = () => {
+      if (!animatedLogo) {
+        animatedLogo = logo.cloneNode(true) as HTMLDivElement;
+        animatedLogo.removeAttribute("id");
+        animatedLogo.setAttribute("aria-hidden", "true");
+        document.body.appendChild(animatedLogo);
+      }
+
+      return animatedLogo;
+    };
+
     const ensureFixed = (
       startLeft: number,
       startTop: number,
       startWidth: number,
       startHeight: number,
     ) => {
-      logo.style.position = "fixed";
-      logo.style.left = `${startLeft}px`;
-      logo.style.top = `${startTop}px`;
-      logo.style.width = `${startWidth}px`;
-      logo.style.height = `${startHeight}px`;
-      logo.style.margin = "0";
-      logo.style.zIndex = "1200";
-      logo.style.pointerEvents = "none";
+      const movingLogo = getAnimatedLogo();
+
+      movingLogo.style.position = "fixed";
+      movingLogo.style.left = `${startLeft}px`;
+      movingLogo.style.top = `${startTop}px`;
+      movingLogo.style.width = `${startWidth}px`;
+      movingLogo.style.height = `${startHeight}px`;
+      movingLogo.style.margin = "0";
+      movingLogo.style.zIndex = "1200";
+      movingLogo.style.pointerEvents = "none";
+      movingLogo.style.visibility = "visible";
+      movingLogo.style.transformOrigin = "left bottom";
+      movingLogo.style.willChange = "transform, opacity";
+      movingLogo.style.webkitBackfaceVisibility = "hidden";
+
+      logo.style.visibility = "hidden";
     };
 
     const measure = async () => {
       try {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         if (document.fonts?.ready) await document.fonts.ready;
       } catch {}
 
@@ -131,6 +157,7 @@ export default function TagBlock() {
 
       if (p <= 0) {
         document.documentElement.classList.remove("ri-light");
+        removeAnimatedLogo();
         resetLogo();
         return;
       }
@@ -141,14 +168,15 @@ export default function TagBlock() {
       const x = m.dx * t;
       const y = m.dy * t;
 
-      logo.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${s})`;
+      const movingLogo = getAnimatedLogo();
+      movingLogo.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${s})`;
 
       if (p >= 1) {
         document.documentElement.classList.add("ri-light");
-        logo.style.opacity = "0";
+        movingLogo.style.opacity = "0";
       } else {
         document.documentElement.classList.remove("ri-light");
-        logo.style.opacity = "1";
+        movingLogo.style.opacity = "1";
       }
     };
 
@@ -185,6 +213,7 @@ export default function TagBlock() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       document.documentElement.classList.remove("ri-light");
+      removeAnimatedLogo();
       resetLogo();
     };
   }, []);
