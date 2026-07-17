@@ -397,6 +397,11 @@ export default function Footer() {
             </div>
           </div>
 
+          <p className={styles.offerDisclaimer}>
+            Информация, предложения и условия, размещенные на сайте, не
+            являются публичной офертой.
+          </p>
+
           <div className={styles.divrBlock}>
             <div className={styles.divrLink}>
               <Link href="/">© RE SEARCH IT, 2026</Link>

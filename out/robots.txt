@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Service sections and technical files
+Disallow: /api/
+Disallow: /_next/
+Disallow: /404/
+Disallow: /404.html
+Disallow: /server-sitemap.xml
+
+# Duplicate URLs with tracking and advertising parameters
+Disallow: /*?utm_
+Disallow: /*&utm_
+Disallow: /*?gclid=
+Disallow: /*&gclid=
+Disallow: /*?fbclid=
+Disallow: /*&fbclid=
+Disallow: /*?yclid=
+Disallow: /*&yclid=
+Disallow: /*?ymclid=
+Disallow: /*&ymclid=
+Disallow: /*?openstat=
+Disallow: /*&openstat=
+Disallow: /*?from=
+Disallow: /*&from=
+
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&utm_referrer&gclid&fbclid&yclid&ymclid&openstat&from
+
+Sitemap: https://research-it.ru/sitemap.xml

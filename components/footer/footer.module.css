@@ -383,6 +383,19 @@
   gap: 10px 20px;
 }
 
+.offerDisclaimer {
+  position: relative;
+  z-index: 10;
+  max-width: 1520px;
+  width: 100%;
+  margin: -8px auto 18px;
+  color: rgba(195, 195, 195, 0.5);
+  font-family: "VelaSans";
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.18px;
+}
+
 .divrBlock a {
   color: rgba(195, 195, 195, 0.5);
   text-decoration: none;
@@ -568,6 +581,14 @@
     letter-spacing: -0.16px;
     gap: 10px 16px;
     margin-top: 10px;
+  }
+
+  .offerDisclaimer {
+    margin-top: 10px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0;
   }
 
   .bigTagWrap {
