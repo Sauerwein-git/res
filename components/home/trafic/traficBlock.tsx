@@ -335,14 +335,16 @@ export default function TraficBlock() {
                 </div>
 
                 <div className={styles.massZone}>
-                  <Link
-                    href="https://web.telegram.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.ctaButton}
-                  >
+                  <noindex>
+                    <Link
+                      href="https://web.telegram.org/"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className={styles.ctaButton}
+                    >
                     TG
-                  </Link>
+                    </Link>
+                  </noindex>
                 </div>
               </div>
 

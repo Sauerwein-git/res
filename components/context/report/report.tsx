@@ -124,7 +124,7 @@ export default function Report() {
             </div>
             <div className={styles.images}>
               <Image
-                src="/img/monitor.png"
+                src="/img/monitor.webp"
                 alt="Previous"
                 width={744}
                 height={435}

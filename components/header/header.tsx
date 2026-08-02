@@ -199,8 +199,8 @@ const DynamicHeader = () => {
 
                   <div className={styles.metaLink}>
                     <div className={styles.numberLink}>Позвонить</div>
-                    <a className={styles.linkOfMeta} href="tel:+79999999999">
-                      +7 999 999 99 99
+                    <a className={styles.linkOfMeta} href="tel:+79951017041">
+                      +7 995 101 70 41
                     </a>
                   </div>
                 </div>
@@ -272,9 +272,14 @@ const DynamicHeader = () => {
                   >
                     <div className={styles.numberLink}>Быстрая связь</div>
                     <div className={styles.typeOfLink}>
-                      <Link href="https://web.telegram.org/a/">
-                        <div className={styles.linkOfMeta}>Telegram</div>
-                      </Link>
+                      <noindex>
+                        <Link
+                          href="https://web.telegram.org/a/"
+                          rel="noopener noreferrer nofollow"
+                        >
+                          <div className={styles.linkOfMeta}>Telegram</div>
+                        </Link>
+                      </noindex>
                     </div>
                   </div>
                 </div>
@@ -347,8 +352,8 @@ const DynamicHeader = () => {
 
                 <div className={styles.metaLink}>
                   <div className={styles.numberLink}>Позвонить</div>
-                  <a className={styles.linkOfMeta} href="tel:+79999999999">
-                    +7 999 999 99 99
+                  <a className={styles.linkOfMeta} href="tel:+79951017041">
+                    +7 995 101 70 41
                   </a>
                 </div>
 
@@ -367,9 +372,14 @@ const DynamicHeader = () => {
                 >
                   <div className={styles.numberLink}>Быстрая связь</div>
                   <div className={styles.typeOfLink}>
-                    <Link href="https://web.telegram.org/a/">
-                      <div className={styles.linkOfMeta}>Telegram</div>
-                    </Link>
+                    <noindex>
+                      <Link
+                        href="https://web.telegram.org/a/"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <div className={styles.linkOfMeta}>Telegram</div>
+                      </Link>
+                    </noindex>
                     <div className={styles.linkOfMeta}> / </div>
                     <Link href="https://www.whatsapp.com/?lang=ru_RU">
                       <div className={styles.linkOfMeta}>WhatsApp</div>

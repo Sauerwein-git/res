@@ -134,6 +134,10 @@ body {
   margin: 0;
 }
 
+noindex {
+  display: contents;
+}
+
 .arrow {
   position: relative;
   top: -3px;

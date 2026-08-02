@@ -9,7 +9,11 @@ const description =
 const ogImage = `${siteUrl}/og-image.png`;
 
 const normalizePath = (path: string) => {
-  const cleanPath = path.split("#")[0].split("?")[0];
+  const cleanPath = path
+    .split("#")[0]
+    .split("?")[0]
+    .replace(/\/{2,}/g, "/")
+    .replace(/\/index\.html$/i, "/");
 
   if (!cleanPath || cleanPath === "/") {
     return "/";
@@ -36,7 +40,7 @@ export default function StructuredData() {
         logo: `${siteUrl}/favicon.svg`,
         image: ogImage,
         email: "hello@research-it.ru",
-        telephone: "+79999999999",
+        telephone: "+79951017041",
         description,
         areaServed: {
           "@type": "Country",
@@ -81,6 +85,7 @@ export default function StructuredData() {
 
   return (
     <Head>
+      <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="ru_RU" />
       <meta property="og:site_name" content={siteName} />

@@ -1,0 +1,141 @@
+.banner {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 10000;
+  display: grid;
+  grid-template-columns: 4px minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+  width: min(760px, calc(100vw - 56px));
+  box-sizing: border-box;
+  padding: 22px 24px 22px 0;
+  overflow: hidden;
+  background: rgba(64, 72, 80, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 18px 55px rgba(20, 24, 28, 0.22);
+  color: #ffffff;
+  font-family: "VelaSans", Arial, sans-serif;
+  animation: appear 240ms ease-out;
+}
+
+.marker {
+  align-self: stretch;
+  background: #fd4c38;
+}
+
+.content {
+  min-width: 0;
+}
+
+.title,
+.text {
+  margin: 0;
+}
+
+.title {
+  margin-bottom: 7px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.text {
+  max-width: 430px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.link {
+  color: #ffffff;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 3px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.primaryButton {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 10px;
+  font-family: "VelaSans", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.primaryButton {
+  border: 1px solid #fd4c38;
+  background: #fd4c38;
+  color: #ffffff;
+}
+
+.primaryButton:hover {
+  background: #ff614f;
+  border-color: #ff614f;
+}
+
+.primaryButton:active {
+  transform: translateY(1px);
+}
+
+.primaryButton:focus-visible,
+.link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .banner {
+    right: 12px;
+    bottom: 12px;
+    grid-template-columns: 3px minmax(0, 1fr);
+    gap: 15px;
+    width: calc(100vw - 24px);
+    padding: 18px 16px 16px 0;
+    border-radius: 14px;
+  }
+
+  .actions {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .primaryButton {
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner {
+    animation: none;
+  }
+}

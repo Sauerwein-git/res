@@ -43,7 +43,7 @@ export default function TagBlock() {
             <div className={styles.fleft}>
               <div className={styles.blocks}>
                 <div className={styles.num}>Позвонить</div>
-                <div className={styles.fTag}>+7 999 999 99 99</div>
+                <div className={styles.fTag}>+7 995 101 70 41</div>
               </div>
               <div className={styles.blocks}>
                 <div className={styles.num}>Написать</div>
@@ -55,7 +55,14 @@ export default function TagBlock() {
                 <div className={styles.num}>Быстрая связь</div>
                 <div className={styles.faq}>
                   <div className={styles.fTag}>
-                    <Link href="https://web.telegram.org/">Telegram</Link>
+                    <noindex>
+                      <Link
+                        href="https://web.telegram.org/"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        Telegram
+                      </Link>
+                    </noindex>
                   </div>
                   <div className={styles.fTag}>/</div>
                   <div className={styles.fTag}>

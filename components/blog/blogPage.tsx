@@ -226,9 +226,15 @@ export default function BlogPage() {
 
             <div className={styles.contactLinks}>
               <span>Напишите нам:</span>
-              <Link href="https://web.telegram.org/" target="_blank">
-                TG
-              </Link>
+              <noindex>
+                <Link
+                  href="https://web.telegram.org/"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  TG
+                </Link>
+              </noindex>
               <Link href="https://www.whatsapp.com/?lang=ru_RU" target="_blank">
                 WA
               </Link>

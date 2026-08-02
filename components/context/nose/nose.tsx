@@ -23,7 +23,7 @@ export default function Nose() {
           <div className={styles.box}>
             <div className={styles.left}>
               <Image
-                src="/img/nose.png"
+                src="/img/nose.webp"
                 alt="Previous"
                 width={744}
                 height={435}

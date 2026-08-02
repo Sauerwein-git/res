@@ -321,7 +321,7 @@ export default function Footer() {
                 <div className={styles.tagPlaceHolder}>
                   <div className={styles.placeText}>Позвонить</div>
                   <div className={styles.placeAnswer}>
-                    <Link href="tel:+79999999999">+7 999 999 99 99</Link>
+                    <Link href="tel:+79951017041">+7 995 101 70 41</Link>
                   </div>
                 </div>
 
@@ -337,13 +337,15 @@ export default function Footer() {
                 <div className={styles.tagPlaceHolder}>
                   <div className={styles.placeText}>Быстрая связь</div>
                   <div className={styles.placeAnswer}>
-                    <Link
-                      href="https://web.telegram.org/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <noindex>
+                      <Link
+                        href="https://web.telegram.org/"
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
                       Telegram
-                    </Link>
+                      </Link>
+                    </noindex>
                   </div>
                 </div>
               </div>

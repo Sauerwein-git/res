@@ -105,14 +105,16 @@ export default function Bisn() {
                 <br /> для вашей ниши
               </div>
               <div className={styles.massZone}>
-  <a
-    href="https://web.telegram.org/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className={styles.massLink}
-  >
+  <noindex>
+    <a
+      href="https://web.telegram.org/"
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      className={styles.massLink}
+    >
     Telegram
-  </a>
+    </a>
+  </noindex>
 </div>
             </div>
           </div>

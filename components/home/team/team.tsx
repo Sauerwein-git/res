@@ -49,12 +49,11 @@ export const Team: React.FC = () => {
         </div>
         <div className={styles.right}>
           <div className={styles.textBlock}>
-            Каждый — эксперт в своей специальности.
+            Каждый из нас эксперт в своей специальности.
             <br />
-            Как начинаем работу, мы закрепим за вами проектную
+            Со старта работ, мы закрепим за вами проектную команду, KPI которой — рост
             <br />
-            команду,{' '}
-            <span className={styles.black}>KPI которой рост вашего дохода</span>
+            <span className={styles.black}>вашего дохода</span>
           </div>
         </div>
       </div>
