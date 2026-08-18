@@ -57,7 +57,7 @@ export default function TagBlock() {
                   <div className={styles.fTag}>
                     <noindex>
                       <Link
-                        href="https://web.telegram.org/"
+                        href="https://t.me/researchit_team"
                         rel="noopener noreferrer nofollow"
                       >
                         Telegram

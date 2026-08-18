@@ -274,7 +274,7 @@ const DynamicHeader = () => {
                     <div className={styles.typeOfLink}>
                       <noindex>
                         <Link
-                          href="https://web.telegram.org/a/"
+                          href="https://t.me/researchit_team"
                           rel="noopener noreferrer nofollow"
                         >
                           <div className={styles.linkOfMeta}>Telegram</div>
@@ -374,7 +374,7 @@ const DynamicHeader = () => {
                   <div className={styles.typeOfLink}>
                     <noindex>
                       <Link
-                        href="https://web.telegram.org/a/"
+                        href="https://t.me/researchit_team"
                         rel="noopener noreferrer nofollow"
                       >
                         <div className={styles.linkOfMeta}>Telegram</div>

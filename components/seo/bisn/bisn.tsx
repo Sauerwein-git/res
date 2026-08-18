@@ -107,7 +107,7 @@ export default function Bisn() {
               <div className={styles.massZone}>
   <noindex>
     <a
-      href="https://web.telegram.org/"
+      href="https://t.me/researchit_team"
       target="_blank"
       rel="noopener noreferrer nofollow"
       className={styles.massLink}

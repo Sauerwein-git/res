@@ -228,7 +228,7 @@ export default function BlogPage() {
               <span>Напишите нам:</span>
               <noindex>
                 <Link
-                  href="https://web.telegram.org/"
+                  href="https://t.me/researchit_team"
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                 >

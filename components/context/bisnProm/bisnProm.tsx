@@ -86,7 +86,7 @@ export default function BisnProm() {
               <div className={styles.massZone}>
                 <noindex>
                   <Link
-                    href="https://web.telegram.org/"
+                    href="https://t.me/researchit_team"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className={styles.ctaButton}

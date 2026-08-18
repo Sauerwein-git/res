@@ -339,7 +339,7 @@ export default function Footer() {
                   <div className={styles.placeAnswer}>
                     <noindex>
                       <Link
-                        href="https://web.telegram.org/"
+                        href="https://t.me/researchit_team"
                         target="_blank"
                         rel="noopener noreferrer nofollow"
                       >
