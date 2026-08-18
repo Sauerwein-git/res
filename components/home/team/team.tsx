@@ -82,7 +82,7 @@ export const Team: React.FC = () => {
                   height={173}
                 />
               </div>
-              <div className={styles.secondBlock_name}>Михайл</div>
+              <div className={styles.secondBlock_name}>Михаил</div>
             </div>
           </div>
           <div className={styles.thirdBlock}>
@@ -123,15 +123,15 @@ export const Team: React.FC = () => {
           <div className={styles.textBlock}>
             <div className={styles.textNoInv}>
               Каждый — эксперт в своей специальности.
-              <br /> Как начинаем работу, мы закрепим за вами проектную команду,{" "}
+              <br /> Со старта работ, мы закрепим за вами проектную команду,{" "}
               <span className={styles.black}>
                 KPI которой рост вашего дохода
               </span>
             </div>
             <div className={styles.textInv}>
               <div>Каждый — эксперт в своей</div>
-              <div> специальности. Как начинаем</div>
-              <div> работу, мы закрепим за вами</div>
+              <div> специальности. Со старта</div>
+              <div> работ, мы закрепим за вами</div>
               <div>
                 {" "}
                 проектную команду,{" "}
@@ -150,8 +150,8 @@ export const Team: React.FC = () => {
               <div className={styles.name}>Елена</div>
             </div>
             <div className={styles.personalBLock}>
-              <Image src="/img/Mi.png" alt="Михайл" width={173} height={173} />
-              <div className={styles.name}>Михайл</div>
+              <Image src="/img/Mi.png" alt="Михаил" width={173} height={173} />
+              <div className={styles.name}>Михаил</div>
             </div>
             <div className={styles.personalBLock}>
               <Image src="/img/An.png" alt="Анна" width={173} height={173} />
@@ -189,7 +189,7 @@ export const Team: React.FC = () => {
               </div>
               <div className={styles.mobTree}>
                 <Image src="/img/Mi.png" alt="Mich" width={120} height={120} />
-                <div className={styles.mobName}>Михайл</div>
+                <div className={styles.mobName}>Михаил</div>
                 <div className={styles.mobJob}>
                   Специалист по
                   <br />
